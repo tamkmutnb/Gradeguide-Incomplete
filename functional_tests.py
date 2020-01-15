@@ -12,36 +12,59 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-        # Edith has heard about a cool new online to-do app. She goes
-        # to check out its homepage
+        #เอิร์ธได้ยินมาว่ามีเว็บในการคำนวณเกรดและอยากจะใช้งาน
+        #จึงเข้าเว็บไปที่หน้า Homepage
+
         self.browser.get('http://localhost:8000')
 
+        #เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
         # She notices the page title and header mention to-do lists
         self.assertIn('Grade-Guide', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
         self.assertIn('Grade-Guide', header_text)
 
-        # She is invited to enter a to-do item straight away
-        inputbox = self.browser.find_element_by_id('subject')
+        #เขาพบว่ามี 2 link ให้เลือกคือ Flow กับหน้า grade calculator
+        link_text = self.browser.find_element_by_tag_name('p1').text
+        self.assertIn('Grade Calulator', link_text)
+        self.assertIn('Flow', link_text)
+
+        #เขาสังเกตุเห็น term ที่เขาจะต้องเลือก
+        term_text = self.browser.find_element_by_tag_name('term').text
+        self.assertIn('Select your term :', term_text)
+
+        #พอคลิกเข้าไปเขาจะต้องเห็น term ต่างๆให้เลือก
+        self.assertIn('term 1', term_text)
+        self.assertIn('term 2', term_text)
+        self.assertIn('term 3', term_text)
+        self.assertIn('term 4', term_text)
+        self.assertIn('term 5', term_text)
+        self.assertIn('term 6', term_text)
+        self.assertIn('term 7', term_text)
+        self.assertIn('term 8', term_text)
+
+        #เขาเลือกเทอมแล้วกดปุ่ม select
+
+        #เขาถูกแนะนำให้ใส่วิชาและเกรดต่างๆ
+        inputbox = self.browser.find_element_by_id('subject1')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Enter subject'
         )
 
-        inputbox = self.browser.find_element_by_id('unit')
+        inputbox = self.browser.find_element_by_id('unit1')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Unit'
         )
 
-        inputbox = self.browser.find_element_by_id('grade')
+        inputbox = self.browser.find_element_by_id('grade1')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Grade (A,B,C only)'
         )
 
-        # She types "Buy peacock feathers" into a text box (Edith's hobby
-        # is tying fly-fishing lures)
+
+        #เขาใส่วิชา circuit ลงไป
         inputbox.send_keys('Circuits')
 
         # When she hits enter, the page updates, and now the page lists
