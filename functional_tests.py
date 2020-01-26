@@ -42,9 +42,6 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('term 7', term_text)
         self.assertIn('term 8', term_text)
 
-        #เขาเลือกเทอมแล้วกดปุ่ม select
-
-
         #เขาจะเห็นช่องสำหรับใส่วิชาเรียน
         inputbox = self.browser.find_element_by_id('subject1')
         self.assertEqual(
@@ -78,6 +75,7 @@ class NewVisitorTest(unittest.TestCase):
         #เขาเห็นส่วนที่จะแสดงกราฟ
 
 
+        #เขาเลือกเทอมแล้วกดปุ่ม select
 
         #เขาใส่วิชา circuit ลงไป
         inputbox.send_keys('Circuits')
