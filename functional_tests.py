@@ -44,24 +44,39 @@ class NewVisitorTest(unittest.TestCase):
 
         #เขาเลือกเทอมแล้วกดปุ่ม select
 
-        #เขาถูกแนะนำให้ใส่วิชาและเกรดต่างๆ
+
+        #เขาจะเห็นช่องสำหรับใส่วิชาเรียน
         inputbox = self.browser.find_element_by_id('subject1')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Enter subject'
         )
 
-        inputbox = self.browser.find_element_by_id('unit1')
-        self.assertEqual(
-            inputbox.get_attribute('placeholder'),
-            'Unit'
-        )
+        #เขาเห็นช่องสำหรับใส่หน่วยกิจ
+        unit_text = self.browser.find_element_by_tag_name('subject1').text
 
-        inputbox = self.browser.find_element_by_id('grade1')
-        self.assertEqual(
-            inputbox.get_attribute('placeholder'),
-            'Grade (A,B,C only)'
-        )
+        #จะมีหน่วยกิจต่างๆให้เลือก
+        self.assertIn('Unit: 1', unit_text)
+        self.assertIn('Unit: 2', unit_text)
+        self.assertIn('Unit: 3', unit_text)
+        self.assertIn('Unit: 4', unit_text)
+
+        #เขาเห็นช่องสำหรับใส่เกรด
+        grade_text = self.browser.find_element_by_tag_name('subject1').text
+
+        #จะมีเกรดต่างๆให้เลือก
+        self.assertIn('Grade: A', grade_text)
+        self.assertIn('Grade: B', grade_text)
+        self.assertIn('Grade: C', grade_text)
+        self.assertIn('Grade: D', grade_text)
+
+        #เขาเห็นส่วนสำหรับแสดงเกรด
+        grade_show = self.browser.find_element_by_tag_name('showgrade').text
+        self.assertIn('GPA', grade_show)
+        self.assertIn('GPAX', grade_show)
+
+        #เขาเห็นส่วนที่จะแสดงกราฟ
+
 
 
         #เขาใส่วิชา circuit ลงไป

@@ -38,10 +38,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject1Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject1>
         <br>
@@ -49,16 +49,16 @@
         <subject2>
         <input id="subject2" placeholder="Enter subject" />
         <select name="subject2Unit">
-            <option value="1">Unit: 1</option>
-            <option value="2">Unit: 2</option>
-            <option value="3">Unit: 3</option>
-            <option value="4">Unit: 4</option>
+            <option value="1">Unit: A</option>
+            <option value="2">Unit: B</option>
+            <option value="3">Unit: C</option>
+            <option value="4">Unit: D</option>
         </select>
         <select name="subject2Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject2>
         <br>
@@ -72,10 +72,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject3Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject3>
         <br>
@@ -89,10 +89,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject4Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject4>
         <br>
@@ -106,10 +106,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject5Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject5>
         <br>
@@ -123,10 +123,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject6Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject6>
         <br>
@@ -140,10 +140,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject7Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject7>
         <br>
@@ -157,10 +157,10 @@
             <option value="4">Unit: 4</option>
         </select>
         <select name="subject8Grade">
-            <option value="1">Grade: 1</option>
-            <option value="2">Grade: 2</option>
-            <option value="3">Grade: 3</option>
-            <option value="4">Grade: 4</option>
+            <option value="1">Grade: A</option>
+            <option value="2">Grade: B</option>
+            <option value="3">Grade: C</option>
+            <option value="4">Grade: D</option>
         </select>
         </subject8>
         <br>
@@ -168,7 +168,9 @@
 
          <button type="submit">submit</button>
         </form><hr>
+        <showgrade>
         Your GPA and GPAX will display here.
+        </showgrade>
         <hr>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -183,14 +185,14 @@
 
 
       data.addRows([
-        [1,  4.00],
-        [2,  3.39],
-        [3,  2.5],
-        [4,  1.5],
-        [5,  2.56],
-        [6,  2.76],
-        [7,  3.00],
-        [8,  3.15]
+        [1,  0],
+        [2,  0],
+        [3,  0],
+        [4,  0],
+        [5,  0],
+        [6,  0],
+        [7,  0],
+        [8,  0]
       ]);
 
       var options = {
@@ -202,7 +204,7 @@
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material');
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
 
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
