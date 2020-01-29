@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}{% endblock %}
+</head>
+<body>
+    <h1>GradeGuide</h1>
+    <a href="{% url 'home' %}">Home</a> /
+    <a href="{% url 'signup' %}">Sign up</a> /
+    <a href="{% url 'login' %}">Log in</a>
+    <hr>
+
+    <h2>Homepage</h2>
+<p>Welcome to GradeGuide !</p>
+<p>
+    <strong>Total users registered: </strong> {{ count }}
+</p>
+    {% block content %} {% endblock %}
+</body>
+</html>
