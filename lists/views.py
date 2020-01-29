@@ -10,7 +10,7 @@ def home_page(request):
 #this is the Real HomePage
 def register(request):
     count = User.objects.count()
-    return render(request, 'base.html', {
+    return render(request, 'index.html', {
         'count': count
     })
 

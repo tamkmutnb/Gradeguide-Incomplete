@@ -1,16 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+
 <html>
-
-    <head>
-
-        <title>Grade-Guide</title>
-
-    </head>
     <hr>
 
     <body>
 
-        <h1>Grade-Guide</h1>
-        <h3>User : {{ user.username }}</h3>
+        <p>{% if user.is_authenticated %}
+        <h4>ID : {{ user.username }}</h4>
+            {% else %}visitor{% endif %}</p>
 
         <p1><a href="url">Grade Calulator</a>
             <a href="url">Flow</a></p1>
@@ -224,3 +221,5 @@
     </body>
 
 </html>
+
+{% endblock %}
