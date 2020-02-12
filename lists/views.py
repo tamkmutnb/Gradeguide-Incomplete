@@ -47,3 +47,7 @@ def calGrade(request):
 
     res = sumsub/sumunit
     return render(request, 'home.html',{'result':res})
+
+def termselect(request):
+    termsel=str(request.POST.get('selectterm'))
+    return render(request, 'home.html', {'term1': termsel})

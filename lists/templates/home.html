@@ -12,8 +12,10 @@
             <a href="url">Flow</a></p1>
         <hr>
         <br>
-        <form method="POST"><term>
-        Select your term : <select>
+        <form action="termselect" method="POST">
+            {% csrf_token %}
+            <term>
+        Select your term :<select name="selectterm">
         <option value="1"> term 1</option>
         <option value="2"> term 2</option>
         <option value="3"> term 3</option>
@@ -24,6 +26,9 @@
         <option value="8"> term 8</option>
         </select></term>
         <button type="submit" value="term_select">Select</button>
+            <br>
+            Term : {{term1}}
+            <br>
         </form><hr>
 
         <form action="calGrade" method="POST" >
