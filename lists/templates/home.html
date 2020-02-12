@@ -15,7 +15,7 @@
         <form action="termselect" method="POST">
             {% csrf_token %}
             <term>
-        Select your term :<select name="selectterm">
+        Select your term :<select name="selectterm" id="selecttermid">
         <option value="1"> term 1</option>
         <option value="2"> term 2</option>
         <option value="3"> term 3</option>
@@ -33,16 +33,16 @@
 
         <form action="calGrade" method="POST" >
             {% csrf_token %}
-        <subject1>
+        <h1>
         <input id="subject1" placeholder="Enter subject" />
-        <select name="subject1Unit">
+        <select name="subject1Unit" id="subject1Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject1Grade">
+        <select name="subject1Grade" id="subject1Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5 (B+)</option>
@@ -57,16 +57,16 @@
         <br>
         <subject2>
         <input id="subject2" placeholder="Enter subject" />
-        <select name="subject2Unit">
+        <select name="subject2Unit" id="subject2Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject2Grade">
+        <select name="subject2Grade" id="subject2Gradeid" >
             <option value="0"></option>
-            <option value="4.5">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
             <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
             <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
@@ -80,14 +80,14 @@
 
         <subject3>
         <input id="subject3" placeholder="Enter subject" />
-        <select name="subject3Unit">
+        <select name="subject3Unit" id="subject3Unitid" >
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject3Grade">
+        <select name="subject3Grade" id="subject3Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -103,14 +103,14 @@
 
         <subject4>
         <input id="subject4" placeholder="Enter subject" />
-       <select name="subject4Unit">
+       <select name="subject4Unit" id="subject4Unitid">
            <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject4Grade">
+        <select name="subject4Grade" id="subject4Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -126,14 +126,14 @@
 
         <subject5>
         <input id="subject5" placeholder="Enter subject" />
-        <select name="subject5Unit">
+        <select name="subject5Unit" id="subject5Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject5Grade">
+        <select name="subject5Grade" id="subject5Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -149,14 +149,14 @@
 
         <subject6>
         <input id="subject6" placeholder="Enter subject" />
-       <select name="subject6Unit">
+       <select name="subject6Unit" id="subject6Unitid">
            <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject6Grade">
+        <select name="subject6Grade" id="subject6Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -172,14 +172,14 @@
 
         <subject7>
         <input id="subject7" placeholder="Enter subject" />
-       <select name="subject7Unit">
+       <select name="subject7Unit" id="subject7Unitid">
            <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject7Grade">
+        <select name="subject7Grade" id="subject7Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -195,14 +195,14 @@
 
         <subject8>
         <input id="subject8" placeholder="Enter subject" />
-        <select name="subject8Unit">
+        <select name="subject8Unit" id="subject8Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject8Grade">
+        <select name="subject8Grade" id="subject8Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
@@ -216,12 +216,33 @@
         </subject8>
         <br>
 
+            <button type="button" onclick="Submitcal()">Submit</button>
+            <input type="submit"value="Save">
 
-         <input type="submit"value="Submit">
         </form><hr>
         <h1>
-            Your GPA {{result}}
-        </h1>
+            Your GPA  : <p" id="demo""></p>
+            </h1>
+        <script>
+        function Submitcal() {
+            var sumunit = parseInt(document.getElementById("subject1Unitid").value)+parseInt(document.getElementById("subject2Unitid").value)+parseInt(document.getElementById("subject3Unitid").value)+parseInt(document.getElementById("subject4Unitid").value)+parseInt(document.getElementById("subject5Unitid").value)+parseInt(document.getElementById("subject6Unitid").value)+parseInt(document.getElementById("subject7Unitid").value)+parseInt(document.getElementById("subject8Unitid").value);
+
+            var sub1 = parseFloat(document.getElementById("subject1Unitid").value)*parseFloat(document.getElementById("subject1Gradeid").value);
+            var sub2 = parseFloat(document.getElementById("subject2Unitid").value)*parseFloat(document.getElementById("subject2Gradeid").value);
+            var sub3 = parseFloat(document.getElementById("subject3Unitid").value)*parseFloat(document.getElementById("subject3Gradeid").value);
+            var sub4 = parseFloat(document.getElementById("subject4Unitid").value)*parseFloat(document.getElementById("subject4Gradeid").value);
+            var sub5 = parseFloat(document.getElementById("subject5Unitid").value)*parseFloat(document.getElementById("subject5Gradeid").value);
+            var sub6 = parseFloat(document.getElementById("subject6Unitid").value)*parseFloat(document.getElementById("subject6Gradeid").value);
+            var sub7 = parseFloat(document.getElementById("subject6Unitid").value)*parseFloat(document.getElementById("subject6Gradeid").value);
+            var sub8 = parseFloat(document.getElementById("subject6Unitid").value)*parseFloat(document.getElementById("subject6Gradeid").value);
+
+            var sumsub = sub1+sub2+sub3+sub4+sub4+sub5+sub6+sub7+sub8;
+
+            var resultGrade = sumsub/sumunit;
+          document.getElementById("demo").innerHTML = resultGrade;
+        }
+        </script>
+
         <hr>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -236,7 +257,7 @@
 
 
       data.addRows([
-        [1,  0],
+        [1,  {{result}}],
         [2,  0],
         [3,  0],
         [4,  0],

@@ -31,7 +31,6 @@ def signup(request):
 def calGrade(request):
     #cal1=int(request.POST.get('subject1Unit'))
     #cal2=int(request.POST.get('subject1Grade'))
-    #res = cal1+cal2
     sub1 = float(request.POST.get('subject1Unit'))*float(request.POST.get('subject1Grade'))
     sub2 = float(request.POST.get('subject2Unit'))*float(request.POST.get('subject2Grade'))
     sub3 = float(request.POST.get('subject3Unit'))*float(request.POST.get('subject3Grade'))
@@ -39,7 +38,7 @@ def calGrade(request):
     sub5 = float(request.POST.get('subject5Unit'))*float(request.POST.get('subject5Grade'))
     sub6 = float(request.POST.get('subject6Unit'))*float(request.POST.get('subject6Grade'))
     sub7 = float(request.POST.get('subject7Unit'))*float(request.POST.get('subject7Grade'))
-    sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))
+    sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))#
 
     sumunit=float(request.POST.get('subject1Unit'))+float(request.POST.get('subject2Unit'))+float(request.POST.get('subject3Unit'))+float(request.POST.get('subject4Unit'))+float(request.POST.get('subject5Unit'))+float(request.POST.get('subject6Unit'))+float(request.POST.get('subject7Unit'))+float(request.POST.get('subject8Unit'))
 
