@@ -14,6 +14,8 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
     url(r'home', views.home_page, name='home'),
+    url(r'flow', views.flow, name='flow'),
+    url(r'picFlow', views.picFlow, name='picFlow'),
     #url(r'home', views.home_page, name='calGrade'),
     #admin page
     #path('admin/', admin.site.urls),

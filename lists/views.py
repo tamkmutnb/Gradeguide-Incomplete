@@ -50,3 +50,9 @@ def calGrade(request):
 def termselect(request):
     termsel=str(request.POST.get('selectterm'))
     return render(request, 'home.html', {'term1': termsel})
+
+def flow(request):
+    return render(request, 'flow.html')
+
+def picFlow(request):
+    return render(request, 'picFlow.html')
