@@ -5,9 +5,8 @@
 
     <body>
         <p>{% if user.is_authenticated %}
-        <h4>ID : {{ user.username }}</h4>
+        <h4>ID : {{ user.username }} {{ test }}</h4>
             {% else %}visitor{% endif %}</p>
-
         <p1><a href="url">Grade calculation</a>
             <a href="flow.html">Flow</a></p1>
         <hr>
@@ -34,7 +33,7 @@
         <form action="calGrade" method="POST" >
             {% csrf_token %}
         <h1>
-        <input id="subject1" placeholder="Enter subject" />
+        <input id="subject1" name="subject1name" placeholder="Enter subject" />
         <select name="subject1Unit" id="subject1Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
@@ -56,7 +55,7 @@
         </subject1>
         <br>
         <subject2>
-        <input id="subject2" placeholder="Enter subject" />
+        <input id="subject2"  placeholder="Enter subject" />
         <select name="subject2Unit" id="subject2Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
