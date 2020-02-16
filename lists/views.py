@@ -43,7 +43,7 @@ def calGrade(request):
     #cal1=int(request.POST.get('subject1Unit'))
     #cal2=int(request.POST.get('subject1Grade'))
     user1=Userinfo.objects.get(name=request.user.username)
-    user1.term1_subject_1 = request.POST.get('subject1name')
+    user1.term1_subject_1= request.POST.get('subject1name')
     user1.term1_subject_1_unit = request.POST.get('subject1Unit')
     user1.term1_subject_1_grade = request.POST.get('subject1Grade')
     user1.save()

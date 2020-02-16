@@ -1,6 +1,7 @@
 from django.db import models
 
 
+<<<<<<< HEAD
     term1_subject_3 = models.TextField(max_length=200, blank=True, null=True)
     term1_subject_3_unit = models.TextField(max_length=10, blank=True, null=True)
     term1_subject_3_grade = models.TextField(max_length=200, blank=True, null=True)
@@ -29,3 +30,7 @@ from django.db import models
 
 '''class Item(models.Model):
     text = models.TextField(default='')'''
+=======
+class Item(models.Model):
+    text = models.TextField(default='')
+>>>>>>> parent of 546ef89... save user data
