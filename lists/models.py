@@ -1,7 +1,21 @@
 from django.db import models
 
+class Userinfo(models.Model):
+    #objects = None
+    objects = None
+    name = models.TextField(max_length=200, blank=True)
+    #password = models.TextField(max_length=200, blank=True)
+    def __str__(self):
+        return self.name
+    #term1
+    term1_subject_1 = models.TextField(max_length=200, blank=True, null=True)
+    term1_subject_1_unit = models.TextField(max_length=10, blank=True, null=True)
+    term1_subject_1_grade = models.TextField(max_length=200, blank=True, null=True)
 
-<<<<<<< HEAD
+    term1_subject_2 = models.TextField(max_length=200, blank=True, null=True)
+    term1_subject_2_unit = models.TextField(max_length=10, blank=True, null=True)
+    term1_subject_2_grade = models.TextField(max_length=200, blank=True, null=True)
+
     term1_subject_3 = models.TextField(max_length=200, blank=True, null=True)
     term1_subject_3_unit = models.TextField(max_length=10, blank=True, null=True)
     term1_subject_3_grade = models.TextField(max_length=200, blank=True, null=True)
@@ -30,7 +44,3 @@ from django.db import models
 
 '''class Item(models.Model):
     text = models.TextField(default='')'''
-=======
-class Item(models.Model):
-    text = models.TextField(default='')
->>>>>>> parent of 546ef89... save user data

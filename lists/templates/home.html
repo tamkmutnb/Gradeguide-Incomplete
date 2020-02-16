@@ -5,9 +5,8 @@
 
     <body>
         <p>{% if user.is_authenticated %}
-        <h4>ID : {{ user.username }}</h4>
+        <h4>ID : {{ user.username }} {{ test }}</h4>
             {% else %}visitor{% endif %}</p>
-
         <p1><a href="url">Grade calculation</a>
             <a href="flow.html">Flow</a></p1>
         <hr>
@@ -27,14 +26,14 @@
         </select></term>
         <button type="submit" value="term_select">Select</button>
             <br>
-            Term : {{Grade_term1}}
+            Term : {{term1}}
             <br>
         </form><hr>
 
         <form action="calGrade" method="POST" >
             {% csrf_token %}
         <h1>
-        <input id="subject1" placeholder="Enter subject" />
+        <input id="subject1" name="subject1name" placeholder="Enter subject" />
         <select name="subject1Unit" id="subject1Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
@@ -50,13 +49,13 @@
             <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
             <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
             <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
-            <option value="1">Grade: 1&nbsp; (D)</option>
-            <option value="0">&nbspGrade: 0&nbsp; (F)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
         </select>
         </subject1>
         <br>
         <subject2>
-        <input id="subject2" placeholder="Enter subject" />
+        <input id="subject2"  placeholder="Enter subject" />
         <select name="subject2Unit" id="subject2Unitid">
             <option value="0"></option>
             <option value="1">Unit: 1</option>
@@ -216,14 +215,13 @@
         </subject8>
         <br>
 
-            <button id="submit" type="button" onclick="Submitcal()">Submit</button>
+            <button type="button" onclick="Submitcal()">Submit</button>
             <input type="submit"value="Save">
 
         </form><hr>
-        <h1 id="gradeshow">
-            Your GPA  : <p id="demo"></p>
+        <h1>
+            Your GPA  : <p" id="demo""></p>
             </h1>
-        {{Grade_term1}}
         <script>
         function Submitcal() {
             var sumunit = parseInt(document.getElementById("subject1Unitid").value)+parseInt(document.getElementById("subject2Unitid").value)+parseInt(document.getElementById("subject3Unitid").value)+parseInt(document.getElementById("subject4Unitid").value)+parseInt(document.getElementById("subject5Unitid").value)+parseInt(document.getElementById("subject6Unitid").value)+parseInt(document.getElementById("subject7Unitid").value)+parseInt(document.getElementById("subject8Unitid").value);
@@ -243,6 +241,7 @@
           document.getElementById("demo").innerHTML = resultGrade;
         }
         </script>
+
         <hr>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -257,7 +256,7 @@
 
 
       data.addRows([
-        [1,  {{Grade_term1}}],
+        [1,  {{result}}],
         [2,  0],
         [3,  0],
         [4,  0],
