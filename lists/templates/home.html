@@ -27,7 +27,7 @@
         </select></term>
         <button type="submit" value="term_select">Select</button>
             <br>
-            Term : {{term1}}
+            Term : {{Grade_term1}}
             <br>
         </form><hr>
 
@@ -50,8 +50,8 @@
             <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
             <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
             <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
-            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
-            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+            <option value="1">Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbspGrade: 0&nbsp; (F)</option>
         </select>
         </subject1>
         <br>
@@ -216,13 +216,14 @@
         </subject8>
         <br>
 
-            <button type="button" onclick="Submitcal()">Submit</button>
+            <button id="submit" type="button" onclick="Submitcal()">Submit</button>
             <input type="submit"value="Save">
 
         </form><hr>
-        <h1>
-            Your GPA  : <p" id="demo""></p>
+        <h1 id="gradeshow">
+            Your GPA  : <p id="demo"></p>
             </h1>
+        {{Grade_term1}}
         <script>
         function Submitcal() {
             var sumunit = parseInt(document.getElementById("subject1Unitid").value)+parseInt(document.getElementById("subject2Unitid").value)+parseInt(document.getElementById("subject3Unitid").value)+parseInt(document.getElementById("subject4Unitid").value)+parseInt(document.getElementById("subject5Unitid").value)+parseInt(document.getElementById("subject6Unitid").value)+parseInt(document.getElementById("subject7Unitid").value)+parseInt(document.getElementById("subject8Unitid").value);
@@ -242,7 +243,6 @@
           document.getElementById("demo").innerHTML = resultGrade;
         }
         </script>
-
         <hr>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -257,7 +257,7 @@
 
 
       data.addRows([
-        [1,  {{result}}],
+        [1,  {{Grade_term1}}],
         [2,  0],
         [3,  0],
         [4,  0],

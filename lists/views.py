@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from lists.models import Item
 
 #this is GradeGuide Page
 def home_page(request):
@@ -45,11 +46,13 @@ def calGrade(request):
     sumsub = sub1+sub2+sub3+sub4+sub5+sub6+sub7+sub8
 
     res = sumsub/sumunit
-    return render(request, 'home.html',{'result':res})
+    return render(request, 'home.html',{'result':res},context)
 
 def termselect(request):
-    termsel=str(request.POST.get('selectterm'))
-    return render(request, 'home.html', {'term1': termsel})
+    context={
+        "Grade_term1": len(Item.objects.all())
+    }
+    return render(request,'home.html',context)
 
 def flow(request):
     return render(request, 'flow.html')
