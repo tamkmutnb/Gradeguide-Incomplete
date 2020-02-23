@@ -273,5 +273,5 @@ class Userinfo(models.Model):
 
 
 
-'''class Item(models.Model):
-    text = models.TextField(default='')'''
+class Item(models.Model):
+    text = models.TextField(default='')

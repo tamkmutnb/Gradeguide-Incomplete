@@ -74,3 +74,24 @@ def flow(request):
 
 def picFlow(request):
     return render(request, 'picFlow.html')
+
+def secondTerm(request):
+    return render(request, 'secondTerm.html')
+
+def thirdTerm(request):
+    return render(request, 'thirdTerm.html')
+
+def fourthTerm(request):
+    return render(request, 'fourthTerm.html')
+
+def fifthTerm(request):
+    return render(request, 'fifthTerm.html')
+
+def sixthTerm(request):
+    return render(request, 'sixthTerm.html')
+
+def seventhTerm(request):
+    return render(request, 'seventhTerm.html')
+
+def eightTerm(request):
+    return render(request, 'eightTerm.html')
