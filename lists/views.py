@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Term_1
 
 #this is GradeGuide Page
 from lists.models import Userinfo
@@ -40,14 +41,11 @@ def signup(request):
 
 #this is login page
 def calGrade(request):
-    #cal1=int(request.POST.get('subject1Unit'))
-    #cal2=int(request.POST.get('subject1Grade'))
-    user1=Userinfo.objects.get(name=request.user.username)
-    user1.term1_subject_1 = request.POST.get('subject1name')
-    user1.term1_subject_1_unit = request.POST.get('subject1Unit')
-    user1.term1_subject_1_grade = request.POST.get('subject1Grade')
-    user1.save()
-    test = user1.term1_subject_1
+    term1 = Term_1()
+    term1.subject = request.POST.get('subject1name')
+    term1.unit = request.POST.get('subject1Unit')
+    term1.Grade = request.POST.get('subject1Grade')
+
     sub1 = float(request.POST.get('subject1Unit'))*float(request.POST.get('subject1Grade'))
     sub2 = float(request.POST.get('subject2Unit'))*float(request.POST.get('subject2Grade'))
     sub3 = float(request.POST.get('subject3Unit'))*float(request.POST.get('subject3Grade'))
@@ -55,14 +53,17 @@ def calGrade(request):
     sub5 = float(request.POST.get('subject5Unit'))*float(request.POST.get('subject5Grade'))
     sub6 = float(request.POST.get('subject6Unit'))*float(request.POST.get('subject6Grade'))
     sub7 = float(request.POST.get('subject7Unit'))*float(request.POST.get('subject7Grade'))
-    sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))#
+    sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))
 
     sumunit=float(request.POST.get('subject1Unit'))+float(request.POST.get('subject2Unit'))+float(request.POST.get('subject3Unit'))+float(request.POST.get('subject4Unit'))+float(request.POST.get('subject5Unit'))+float(request.POST.get('subject6Unit'))+float(request.POST.get('subject7Unit'))+float(request.POST.get('subject8Unit'))
+    sumsub = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7 + sub8
+    res = sumsub/sumunit
 
-    sumsub = sub1+sub2+sub3+sub4+sub5+sub6+sub7+sub8
+    term1.GPA = res
 
-    res = sumsub#/sumunit
-    return render(request, 'home.html',{'result':res, 'name':request.user.username, 'test' : test})
+    term1.save()
+    data = Term_1.objects.all()
+    return render(request, 'home.html',{'result':res, 'name':request.user.username,'list': data})
 
 def termselect(request):
 
