@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db import models
 class Userinfo(models.Model):
     #objects = None
     objects = None
@@ -277,7 +277,6 @@ class Item(models.Model):
     text = models.TextField(default='')
 
 class Term_1(models.Model):
-
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)

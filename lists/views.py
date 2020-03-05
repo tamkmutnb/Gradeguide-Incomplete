@@ -63,7 +63,7 @@ def calGrade(request):
 
     term1.save()
     data = Term_1.objects.all()
-    return render(request, 'home.html',{'result':res, 'name':request.user.username,'list': data})
+    return render(request, 'home.html',{'result':res, 'name':request.user.username,'list': data,'list123': term1.subject})
 
 def termselect(request):
 

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'layout.html' %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     {% block title %}{% endblock %}
@@ -14,7 +16,6 @@
         <a href="{% url 'login' %}">Log in</a> /
     {% endif %}
     <hr>
-
-    {% block content %} {% endblock %}
+    {% endblock %}
 </body>
 </html>
