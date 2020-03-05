@@ -22,16 +22,15 @@
 
         <form action="calGrade" method="POST" >
             {% csrf_token %}
-
-        <input id="subject1" name="subject1name" placeholder="Enter subject"/>
-        <select name="subject1Unit" id="subject1Unitid">
+        <input id="subject1" name="subject1name" placeholder="Enter subject" {{data123}}/>
+        <select name="subject1Unit" id="subject1Unitid" >
             <option value="0"></option>
             <option value="1">Unit: 1</option>
             <option value="2">Unit: 2</option>
             <option value="3">Unit: 3</option>
             <option value="4">Unit: 4</option>
         </select>
-        <select name="subject1Grade" id="subject1Gradeid" {{res}}>
+        <select name="subject1Grade" id="subject1Gradeid">
             <option value="0"></option>
             <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
             <option value="3.5">Grade: 3.5 (B+)</option>
@@ -206,9 +205,9 @@
         <br>
             <button type="button" class="btn btn-primary btn-lg" onclick="Submitcal()">Submit</button>
             <input type="submit" class="btn btn-secondary btn-lg" value="Save">
-        </form><hr>
+        </form>
         <h1>
-            Your GPA  : <p" id="demo""></p>
+            Your GPA  : {{result}} <p" id="demo""></p>
 
             </h1>
         <h1>Student Status : <p" id="student_state""></p></h1>
@@ -239,19 +238,26 @@
           document.getElementById("student_state").innerHTML = state;
         }
         </script>
-            {% for itemlist in list %}
-        <table class="sp_gpa_tb">
-            <tbody>
-            <tr>
-            <th>วิชา</th>
-            <th>หน่วยกิต</th>
-            <th>เกรด</th> </tr>
-        <tr><td class="xs">{{itemlist.subject}}</td>
-            <td class="xu">{{itemlist.unit}}</td>
-            <td class="xg">{{itemlist.Grade}}</td>
-        </tr>
-        </table>
-            {%endfor %}
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+    {% for itemlist in list %}
+  <tbody>
+    <tr>
+      <th scope="row">{{itemlist.id}}</th>
+      <td>{{itemlist.subject}}</td>
+      <td>{{itemlist.unit}}</td>
+      <td>{{itemlist.Grade}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
         <hr><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
             google.charts.load('current', {'packages':['line']});

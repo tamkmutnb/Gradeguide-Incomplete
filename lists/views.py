@@ -41,30 +41,36 @@ def signup(request):
 
 #this is login page
 def calGrade(request):
-    term1 = Term_1()
-    term1.subject = request.POST.get('subject1name')
-    term1.unit = request.POST.get('subject1Unit')
-    term1.Grade = request.POST.get('subject1Grade')
-
-    sub1 = float(request.POST.get('subject1Unit'))*float(request.POST.get('subject1Grade'))
-    sub2 = float(request.POST.get('subject2Unit'))*float(request.POST.get('subject2Grade'))
-    sub3 = float(request.POST.get('subject3Unit'))*float(request.POST.get('subject3Grade'))
-    sub4 = float(request.POST.get('subject4Unit'))*float(request.POST.get('subject4Grade'))
-    sub5 = float(request.POST.get('subject5Unit'))*float(request.POST.get('subject5Grade'))
-    sub6 = float(request.POST.get('subject6Unit'))*float(request.POST.get('subject6Grade'))
-    sub7 = float(request.POST.get('subject7Unit'))*float(request.POST.get('subject7Grade'))
-    sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))
-
-    sumunit=float(request.POST.get('subject1Unit'))+float(request.POST.get('subject2Unit'))+float(request.POST.get('subject3Unit'))+float(request.POST.get('subject4Unit'))+float(request.POST.get('subject5Unit'))+float(request.POST.get('subject6Unit'))+float(request.POST.get('subject7Unit'))+float(request.POST.get('subject8Unit'))
-    sumsub = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7 + sub8
-    res = sumsub/sumunit
-
-    term1.GPA = res
-
-    term1.save()
     data = Term_1.objects.all()
-    return render(request, 'home.html',{'result':res, 'name':request.user.username,'list': data,'list123': term1.subject})
+    if len(data) <= 8:
+        term1 = Term_1()
+        term1.subject = request.POST.get('subject1name')
+        term1.unit = request.POST.get('subject1Unit')
+        term1.Grade = request.POST.get('subject1Grade')
 
+        sub1 = float(request.POST.get('subject1Unit'))*float(request.POST.get('subject1Grade'))
+        sub2 = float(request.POST.get('subject2Unit'))*float(request.POST.get('subject2Grade'))
+        sub3 = float(request.POST.get('subject3Unit'))*float(request.POST.get('subject3Grade'))
+        sub4 = float(request.POST.get('subject4Unit'))*float(request.POST.get('subject4Grade'))
+        sub5 = float(request.POST.get('subject5Unit'))*float(request.POST.get('subject5Grade'))
+        sub6 = float(request.POST.get('subject6Unit'))*float(request.POST.get('subject6Grade'))
+        sub7 = float(request.POST.get('subject7Unit'))*float(request.POST.get('subject7Grade'))
+        sub8 = float(request.POST.get('subject8Unit'))*float(request.POST.get('subject8Grade'))
+
+        sumunit=float(request.POST.get('subject1Unit'))+float(request.POST.get('subject2Unit'))+float(request.POST.get('subject3Unit'))+float(request.POST.get('subject4Unit'))+float(request.POST.get('subject5Unit'))+float(request.POST.get('subject6Unit'))+float(request.POST.get('subject7Unit'))+float(request.POST.get('subject8Unit'))
+        sumsub = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7 + sub8
+        res = sumsub/sumunit
+
+        term1.GPA = res
+        Term_1.objects.filter(pk=1).update(subject="New Title")
+        term1.save()
+        data = Term_1.objects.all()
+        data1 = Term_1.objects.filter(pk=1).update(subject="New Title")
+        term1.save()
+        #data1 = Term_1.objects.filter(blog_id=4)
+        return render(request, 'home.html',{'result':res, 'name':request.user.username,'list': data,'data123':data1})
+    else:
+        return render(request, 'home.html')
 def termselect(request):
 
     termsel=str(request.POST.get('selectterm'))
