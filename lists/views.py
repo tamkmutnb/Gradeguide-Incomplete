@@ -71,6 +71,7 @@ def calGrade(request):
 
                 Term1.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'])
                 data = Term1.objects.all()
+                #1
                 return render(request, 'home.html')
             else:
                 Term1.objects.filter(pk=1).update(subject=request.POST.get('subject1name'))
