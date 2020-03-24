@@ -4,13 +4,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Term1,Term2,Term3,Term4,Term5,Term6,Term7,Term8,GPA
 
-
 #this is GradeGuide Page
 from lists.models import Userinfo
 
-
 def home_page(request):
-    data = Term1.objects.all()
+
     return render(request, 'home.html')
 
 #this is the Real HomePage
@@ -39,7 +37,6 @@ def signup(request):
     return render(request, 'registration/signup.html', {
         'form': form
     })
-
 #this is login page
 def calGrade(request):
     term1 = Term1()
