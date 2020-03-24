@@ -447,12 +447,19 @@ def termselect(request):
 
 def flow(request):
     return render(request, 'flow.html')
+
 def Graph(request):
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
     dataGPA = GPA.objects.all()
-
     return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
+
+def Result(request):
+    dataterm_1 = Term1.objects.all()
+    dataterm_2 = Term2.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'Result.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
+
 def picFlow(request):
     return render(request, 'picFlow.html')
 
