@@ -437,6 +437,9 @@ def calGrade(request):
 
                 Term8.GPA = res
                 return render(request, 'home.html')
+        else:
+            message = "Please select term for save your grade"
+            return render(request, 'home.html',{'message':message})
 def termselect(request):
 
     termsel=str(request.POST.get('selectterm'))

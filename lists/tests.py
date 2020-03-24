@@ -1,14 +1,6 @@
-from django.urls import resolve
 from django.test import TestCase
-from django.http import HttpRequest
-from django.template.loader import render_to_string
-from lists.views import home_page
-from django.test import TestCase
-from lists.models import Item
-
-from django.urls import resolve
-from django.test import TestCase
-from lists.views import home_page
+from django.contrib.auth.models import User
+from lists.models import Userinfo,Term1,Term2,Term3,Term4,Term5,Term6,Term7,Term8,GPA
 
 class HomePageTest(TestCase):
 
