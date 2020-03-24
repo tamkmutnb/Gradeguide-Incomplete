@@ -54,6 +54,9 @@ def calGrade(request):
 
     print(len(data1))
     if len(Term1.objects.all()) <= 8:
+        if request.POST.get('subject1Term') == "0":
+            term_0 = "selected your term"
+            return render(request, 'home.html',{'term0':term_0})
         if request.POST.get('subject1Term') == "1":
             if len(Term1.objects.all()) == 0 :
                 Term1.objects.create(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'])
