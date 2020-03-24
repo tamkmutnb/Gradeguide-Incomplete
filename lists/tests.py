@@ -84,3 +84,18 @@ class GradeCalTest(TestCase):
         self.assertEqual(example_saved_user.term6.first().subject, 'example_subject6')
         self.assertEqual(example_saved_user.term7.first().subject, 'example_subject7')
         self.assertEqual(example_saved_user.term8.first().subject, 'example_subject8')
+
+    def test_gradeCal_can_save_GPA(self):
+        example_user = Userinfo.objects.create(name='example_user ')
+        example_GPA_data = GPA.objects.create(GPA_1 = "4",GPA_2 = "3.5",GPA_3 = "3",GPA_4 = "2.5",GPA_5 = "2",GPA_6 = "1.5",GPA_7 = "1",GPA_8 = "0.5")
+        example_user.gpa.add(example_GPA_data)
+        user = Userinfo.objects.all()
+        example_saved_user = user[0]
+        self.assertEqual(example_saved_user.gpa.first().GPA_1, '4')
+        self.assertEqual(example_saved_user.gpa.first().GPA_2, '3.5')
+        self.assertEqual(example_saved_user.gpa.first().GPA_3, '3')
+        self.assertEqual(example_saved_user.gpa.first().GPA_4, '2.5')
+        self.assertEqual(example_saved_user.gpa.first().GPA_5, '2')
+        self.assertEqual(example_saved_user.gpa.first().GPA_6, '1.5')
+        self.assertEqual(example_saved_user.gpa.first().GPA_7, '1')
+        self.assertEqual(example_saved_user.gpa.first().GPA_8, '0.5')
