@@ -1,7 +1,6 @@
 
 {% extends 'layout.html' %}
 {% block content %}
-
 <html>
     <hr>
     <body>
@@ -10,29 +9,212 @@
             {% else %}visitor{% endif %}</p>
         <hr>
         <br>
-        <a href="{% url 'home' %}">First Term</a> /
-        <a href="{% url 'secondTerm' %}">Second Term</a> /
-        <a href="{% url 'thirdTerm' %}">Third Term</a> /
-        <a href="{% url 'fourthTerm' %}">Fourth Term</a> /
-        <a href="{% url 'fifthTerm' %}">Fifth Term</a> /
-        <a href="{% url 'sixthTerm' %}">Sixth Term</a> /
-        <a href="{% url 'seventhTerm' %}">Seventh Term</a> /
-        <a href="{% url 'eightTerm' %}">Eight Term</a> /
-        You selected : Term 1
-
-        <form action="calGrade" method="POST" >
-            {% csrf_token %}
-            <select name="subject1Term" id="subject1Termid" >
+<form action="calGrade" method="POST" >
+    {% csrf_token %}
+    selected your term :
+    <select name="subject1Term" id="subject1Termid" >
+    <option value=" "></option>
+    <option value="1">Term: 1</option>
+    <option value="2">Term: 2</option>
+    <option value="3">Term: 3</option>
+    <option value="4">Term: 4</option>
+    <option value="5">Term: 5</option>
+    <option value="6">Term: 6</option>
+    <option value="7">Term: 7</option>
+    <option value="8">Term: 8</option>
+</select><br>
+    <hr>
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><input id="subject1" name="subject1name" placeholder="Enter subject"/></td>
+      <td><select name="subject1Unit" id="subject1Unitid" >
             <option value=" "></option>
-            <option value="1">Term: 1</option>
-            <option value="2">Term: 2</option>
-            <option value="3">Term: 3</option>
-            <option value="4">Term: 4</option>
-            <option value="5">Term: 5</option>
-            <option value="6">Term: 6</option>
-            <option value="7">Term: 7</option>
-            <option value="8">Term: 8</option>
-        </select><br>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+      <td><select name="subject1Grade" id="subject1Gradeid">
+            <option value="0"></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5 (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><input id="subject2" name="subject2name" placeholder="Enter subject" /></td>
+      <td><select name="subject2Unit" id="subject2Unitid">
+            <option value="0"></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+      <td><select name="subject2Grade" id="subject2Gradeid" >
+            <option value="0"></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><input id="subject3" name="subject3name" placeholder="Enter subject" /></td>
+      <td><select name="subject3Unit" id="subject3Unitid" >
+            <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+        <td><select name="subject3Grade" id="subject3Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td><input id="subject4" name="subject4name" placeholder="Enter subject" /></td>
+      <td><select name="subject4Unit" id="subject4Unitid">
+           <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+      <td><select name="subject4Grade" id="subject4Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td><input id="subject5" name="subject5name" placeholder="Enter subject" /></td>
+      <td><select name="subject5Unit" id="subject5Unitid">
+            <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+        <td>        <select name="subject5Grade" id="subject5Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+
+
+
+      <tr>
+      <th scope="row">6</th>
+      <td><input id="subject6" name="subject6name" placeholder="Enter subject" /></td>
+      <td><select name="subject6Unit" id="subject6Unitid">
+           <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+      <td><select name="subject6Grade" id="subject6Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td><input id="subject7" name="subject7name" placeholder="Enter subject" /></td>
+      <td><select name="subject7Unit" id="subject7Unitid">
+           <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+        <td><select name="subject7Grade" id="subject7Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+      <tr>
+      <th scope="row">8</th>
+      <td><input id="subject8" name="subject8name" placeholder="Enter subject" /></td>
+      <td><select name="subject8Unit" id="subject8Unitid">
+            <option value=" "></option>
+            <option value="1">Unit: 1</option>
+            <option value="2">Unit: 2</option>
+            <option value="3">Unit: 3</option>
+            <option value="4">Unit: 4</option>
+        </select></td>
+          <td><select name="subject8Grade" id="subject8Gradeid">
+            <option value=" "></option>
+            <option value="4">&nbsp; Grade: 4&nbsp; (A)</option>
+            <option value="3.5">Grade: 3.5&nbsp; (B+)</option>
+            <option value="3">&nbsp;Grade: 3&nbsp; (B)</option>
+            <option value="2.5">Grade: 2.5&nbsp; (C+)</option>
+            <option value="2">&nbsp;Grade: 2&nbsp; (C)</option>
+            <option value="1.5">Grade: 1.5&nbsp; (D+)</option>
+            <option value="1">&nbsp; Grade: 1&nbsp; (D)</option>
+            <option value="0">&nbsp; Grade: 0&nbsp; (F)</option>
+        </select></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
