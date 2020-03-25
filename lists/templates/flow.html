@@ -1,16 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
 <html>
+  <body>
     <h1>Flow</h1>
-    <body>
-        <div class="search-container">
-            <form action="/action_page.php">
-                <h4 name="subject_head">subject :</h4>
-              <input type="text" placeholder="Search.." name="search" size="120" id="search_placeholder">
-              <button type="submit" id="submit_button">search</button>
-              <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button">
-            </form>
-          </div>
+      <form action='flow' method='POST'>
+        {% csrf_token %}
+        <input type="text" placeholder="Search.." name="searchFlow" size="120" id="search_placeholder" />
+        <button type="submit" id="submit_button" name="searchSubject">search</button>
+        <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button">  
+        <h2 name="subject_head">subject : {{subjects}} </h2>
+        <p>{{Result}}</p>
+      </form>
     </body>
 </html>
 {% endblock %}
