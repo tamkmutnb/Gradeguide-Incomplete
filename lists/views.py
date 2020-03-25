@@ -96,7 +96,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_1=res)
 
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term1.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term1.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -112,7 +112,7 @@ def calGrade(request):
 
                 data = Term1.objects.all()
                 term1.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
 
         if request.POST.get('subjectTerm') == "2":
             if checkinput == 0.0:
@@ -154,7 +154,7 @@ def calGrade(request):
 
                 Term2.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
                 GPA.objects.filter(pk=1).update(GPA_2=res)
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term2.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term2.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -212,7 +212,7 @@ def calGrade(request):
                 Term3.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
                 GPA.objects.filter(pk=1).update(GPA_3=res)
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term3.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term3.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -226,7 +226,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_3=res)
 
                 Term3.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
 
 
         if request.POST.get('subjectTerm') == "4":
@@ -271,7 +271,7 @@ def calGrade(request):
                 Term4.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
                 GPA.objects.filter(pk=1).update(GPA_4=res)
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term4.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term4.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -285,7 +285,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_4=res)
 
                 Term4.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
         if request.POST.get('subjectTerm') == "5":
             if checkinput == 0.0:
                 return render(request, 'home.html', {'notinput': not_input})
@@ -329,7 +329,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_5=res)
 
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term5.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term5.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -343,7 +343,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_5=res)
 
                 Term5.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
         if request.POST.get('subjectTerm') == "6":
             if checkinput == 0.0:
                 return render(request, 'home.html', {'notinput': not_input})
@@ -387,7 +387,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_6=res)
 
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term5.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term5.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -401,7 +401,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_6=res)
 
                 Term6.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
         if request.POST.get('subjectTerm') == "7":
             if checkinput == 0.0:
                 return render(request, 'home.html', {'notinput': not_input})
@@ -445,7 +445,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_7=res)
 
 
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term6.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term6.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -459,7 +459,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_7=res)
 
                 Term7.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
 
 
         if request.POST.get('subjectTerm') == "8":
@@ -503,7 +503,7 @@ def calGrade(request):
 
                 Term8.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
                 GPA.objects.filter(pk=1).update(GPA_8=res)
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
             else:
                 Term6.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
                 Term6.objects.filter(pk=2).update(subject =request.POST['subject2name'], unit=request.POST['subject2Unit'],Grade=request.POST['subject2Grade'],GPA=res)
@@ -517,7 +517,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_8=res)
 
                 Term8.GPA = res
-                return render(request, 'home.html')
+                return render(request, 'home.html',{'result':res})
         else:
             message = 'Please select term before saving grade'
             return render(request, 'home.html',{'message':message})
