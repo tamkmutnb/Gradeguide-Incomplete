@@ -701,65 +701,65 @@ def flow(request):
     return render(request, 'flow.html',{'subjects':subjects, 'Result':Result})
 
 def listOfSubject(request) :
-    listSemister1 = """ Programming Fundamental <br />
-            Engineering Mathematics I <br />
-            Computer Engineering Exploration <br />
-            Physics I <br />
-            Physics Laboratory I <br />
-            Language Elective Course I <br />
-            Physical Education Elective Course I <br />
-            Social Sciences Elective Course <br />
-            Introduction to Engineer <br />"""
+    listSemister1 = """ Programming Fundamental<br />
+            Engineering Mathematics I<br />
+            Computer Engineering Exploration<br />
+            Physics I<br />
+            Physics Laboratory I<br />
+            Language Elective Course I<br />
+            Physical Education Elective Course I<br />
+            Social Sciences Elective Course<br />
+            Introduction to Engineer<br />"""
 
-    listSemister2 = """Electric Circuit Theory <br />
-            Electric Circuit Lab <br />
-            Algorithms and Data Structure <br />
-            Work Ethics <br />
-            Engineering Mathematics II <br />
-            Physics II <br />
-            Physics Laboratory II <br />
-            Language Elective Course II <br />
-            Physical Education Elective Course II <br />"""
+    listSemister2 = """Electric Circuit Theory<br />
+            Electric Circuit Lab<br />
+            Algorithms and Data Structure<br />
+            Work Ethics<br />
+            Engineering Mathematics II<br />
+            Physics II<br />
+            Physics Laboratory II<br />
+            Language Elective Course II<br />
+            Physical Education Elective Course II<br />"""
 
-    listSemister3 = """Statistics for Computer Engineer <br />
-            Introduction to Signals and System <br />
-            Logic Design of Digital System <br />
-            Digital System Design Laboratory <br />
-            Software Development Practice I <br />
-            Discrete Mathematics <br />
-            Science and Maths Elective I <br />"""
+    listSemister3 = """Statistics for Computer Engineer<br />
+            Introduction to Signals and System<br />
+            Logic Design of Digital System<br />
+            Digital System Design Laboratory<br />
+            Software Development Practice I<br />
+            Discrete Mathematics<br />
+            Science and Maths Elective I<br />"""
 
-    listSemister4 = """Software Development Practice II <br />
-            Computer Networks I <br />
-            Computer Organization <br />
-            Ubiquitous Computing <br />
-            Analog and Digital Electronics <br />
-            Science and Maths Elective II <br />"""
+    listSemister4 = """Software Development Practice II<br />
+            Computer Networks I<br />
+            Computer Organization<br />
+            Ubiquitous Computing<br />
+            Analog and Digital Electronics<br />
+            Science and Maths Elective II<br />"""
 
-    listSemister5 = """Software Engineering <br />
-            Computer Networks II <br />
-            Operating Systems <br />
-            Embedded System Design <br />
-            Analog and Digital Electronics Lab <br />
-            Language Elective Course III <br />"""
+    listSemister5 = """Software Engineering<br />
+            Computer Networks II<br />
+            Operating Systems<br />
+            Embedded System Design<br />
+            Analog and Digital Electronics Lab<br />
+            Language Elective Course III<br />"""
 
-    listSemister6 = """Database Systems <br />
-            Computer Networks Lab <br />
-            Embedded System Design Laboratory <br />
-            Language Elective Course IV <br />
-            Computer Eng. Elective Course I <br />
-            Computer Eng. Elective Course II <br />
-            Humanities Elective Course I <br />"""
+    listSemister6 = """Database Systems<br />
+            Computer Networks Lab<br />
+            Embedded System Design Laboratory<br />
+            Language Elective Course IV<br />
+            Computer Eng. Elective Course I<br />
+            Computer Eng. Elective Course II<br />
+            Humanities Elective Course I<br />"""
 
-    listSemister7 = """Project I <br />
-            Free Elective Course I <br />
-            Humanities Elective Course II <br />
-            Computer Eng. Elective Course III <br />
-            Computer Eng. Elective Course IV <br />"""
+    listSemister7 = """Project I<br />
+            Free Elective Course I<br />
+            Humanities Elective Course II<br />
+            Computer Eng. Elective Course III<br />
+            Computer Eng. Elective Course IV<br />"""
 
-    listSemister8 = """Project II <br />
-            Computer Eng. Seminar <br />
-            Free Elective Course II <br />
+    listSemister8 = """Project II<br />
+            Computer Eng. Seminar<br />
+            Free Elective Course II<br />
             Science and Maths Elective III"""
 
     return render(request, 'subject.html', {'semister1':listSemister1,'semister2':listSemister2,'semister3':listSemister3,'semister4':listSemister4,'semister5':listSemister5,'semister6':listSemister6,'semister7':listSemister7,'semister8':listSemister8})
