@@ -15,6 +15,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     url(r'home', views.home_page, name='home'),
     url(r'flow', views.flow, name='flow'),
+    url(r'help', views.help, name='help'),
     url(r'subject', views.listOfSubject, name='listOfSubjects'),
     url(r'graph', views.Graph, name='Graph'),
     url(r'result', views.Result, name='Result'),
