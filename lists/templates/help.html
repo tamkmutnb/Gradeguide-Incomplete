@@ -6,81 +6,96 @@
     <title>Help</title>
 </head>
 <body>
+<style>
 
-<h1> How can we help you :)</h1>
 
-<b> Sign up </b>
-<p> Go to sign up <a href="http://127.0.0.1:8000/signup/">Signup Link</a>
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 100%;
+  height: 90%;
+}
+hr.new5 {
+  border: 10px solid green;
+  border-radius: 5px;
+}
+</style>
+<br>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How can we help you :)</h1>
+<hr class="new5">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> Sign up </b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to sign up <a href="{% url 'signup' %}">Signup Link</a>
     <br>
-    *We recommend to sign up before using our webapp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*We recommend to sign up before using our webapp
     <br>
-    *Remember to read the <b>requirement</b> for your <b>"USERNAME" and "PASSWORD"</b>
- </p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Remember to read the <b>requirement</b> for your <b>"USERNAME" and "PASSWORD"</b>
+</p>
 
-<b> Log in </b>
-<p>
-    Go to log in <a href="http://127.0.0.1:8000/accounts/login/">Login Link</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> Log in </b><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to log in <a href="{% url 'login' %}">Login Link</a>
     <br>
-    After signup you can login in the above link
-
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After signup you can login in the above link
 </p>
 
-<b> Homepage </b>
-<p> Go to home page <a href="http://127.0.0.1:8000/">Homepage Link</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> Homepage </b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to home page <a href="home">Homepage Link</a>
     <br>
-    Homepage shows you how many account has been registered
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Homepage shows you how many account has been registered
 </p>
 
-<b> Grade Calculator </b>
-<> Go to Grade Calculator<a href="http://127.0.0.1:8000/home">Gradecalculator Link</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> Grade Calculator </b>
+<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to Grade Calculator<a href="home">Gradecalculator Link</a>
     <br>
-    Calculate your grade in each terms<br>
-    1.Select your <b>Term Before Inputing Grade</b><br>
-    2.1 Input grade of your subjects <b>as much as you have</b> in that term<br>
-    2.2 Enter your subject name<br>
-    2.3 Select Grade Unit from 1-4<br>
-    2.4 Select your Grade of the subject<br>
-    3.Click <b>Save button</b><br>
-    4.Click <b>Submit button</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calculate your grade in each terms<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.Select your <b>Term Before Inputing Grade</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 Input grade of your subjects <b>as much as you have</b> in that term<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2 Enter your subject name<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.3 Select Grade Unit from 1-4<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4 Select your Grade of the subject<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Click <b>Save button</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.Click <b>Submit button</b><br>
 </p>
 
-<b> Your GPA and Student Status</b>
-<p>
-    Your GPA and Student Status will be shown in the same page as Grade Calculator<br>
-    <b>*It will be shown at the bottom of Grade Calculator Page</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> Your GPA and Student Status</b><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your GPA and Student Status will be shown in the same page as Grade Calculator<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>*It will be shown at the bottom of Grade Calculator Page</b>
 </p>
 
-<b> See your result each term</b>
-<p> You can see your each term result by click <b>RESULT</b> on the top page and select your term<br>
-    or click following link <br>
-    <a href="http://127.0.0.1:8000/r'firstTerm'">1. first term</a><br>
-    <a href="http://127.0.0.1:8000/r'secondTerm'">2. second term</a><br>
-    <a href="http://127.0.0.1:8000/r'thirdTerm'">3. third term</a><br>
-    <a href="http://127.0.0.1:8000/r'fourthTerm'">4. fourth term</a><br>
-    <a href="http://127.0.0.1:8000/r'fifthTerm'">5. fifth term</a><br>
-    <a href="http://127.0.0.1:8000/r'sixthTerm'">6. sixth term</a><br>
-    <a href="http://127.0.0.1:8000/r'seventhTerm'">7. seventh term</a><br>
-    <a href="http://127.0.0.1:8000/r'eightTerm'">8. eighth term</a><br>
+<b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2">See your result each term</b><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can see your each term result by click <b>RESULT</b> on the top page and select your term<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or click following link <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'firstTerm'">1. first term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'secondTerm'">2. second term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'thirdTerm'">3. third term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'fourthTerm'">4. fourth term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'fifthTerm'">5. fifth term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'sixthTerm'">6. sixth term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'seventhTerm'">7. seventh term</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'eightTerm'">8. eighth term</a><br>
 </p>
 
-<b> See your GPA graph</b>
-<p>
-    You can see your GPA graph by click <b>GRAPH</b> on the top page<br>
-    or click following link <br>
-    <a href="http://127.0.0.1:8000/r'graph'">Graph Page</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> See your GPA graph</b><br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can see your GPA graph by click <b>GRAPH</b> on the top page<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or click following link <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="r'graph'">Graph Page</a>
 </p>
 
-<b> See Subject Flow</b>
-<p> You can see Subject Flow by click <b>FLOW</b> on the top page<br>
-    1.You can search for subjects by typing your subject in <b>search text field</b> and press <b>search button</b><br>
-    2.1 If you couldn't find subjects you are looking for press <b>Subjects button</b> to see all subjects<br>
-    2.2 click this link to see all subjects <a href="http://127.0.0.1:8000/subject.html">Subject list</a><br>
-    3.You can see full flow by click <b>Full Flow button</b> or click following link <a href="http://127.0.0.1:8000/picFlow.html">Full FLow</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> See Subject Flow</b><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can see Subject Flow by click <b>FLOW</b> on the top page<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.You can search for subjects by typing your subject in <b>search text field</b> and press <b>search button</b><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 If you couldn't find subjects you are looking for press <b>Subjects button</b> to see all subjects<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.2 click this link to see all subjects <a href="subject.html">Subject list</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.You can see full flow by click <b>Full Flow button</b> or click following link <a href="picFlow.html">Full FLow</a>
 </p>
 
-<b> See About this WebApp</b>
-<p> You can see info about us by click <b>ABOUT</b> on the top page<br>
-    or click the following link <a href="http://127.0.0.1:8000/r'about'">About us</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p id="rcorners2"><b> See About this WebApp</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can see info about us by click <b>ABOUT</b> on the top page<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or click the following link <a href="r'about'">About us</a>
 </p>
 
 </body>
