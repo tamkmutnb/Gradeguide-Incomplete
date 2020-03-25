@@ -1,3 +1,5 @@
+{% extends 'layout.html' %}
+{% block content %}
 <html>
   <body>
     <h1>Flow</h1>
@@ -5,12 +7,13 @@
     <input type="button" onclick="window.location.href='subject.html'" value="Subjects" id="subject_button"></p>
       <form action='flow' method='POST'>
         {% csrf_token %}
-        <input type="text" placeholder="Search.." name="searchFlow" size="120" id="search_placeholder" />
+        <p><input type="text" placeholder="Search.." name="searchFlow" size="120" id="search_placeholder" />
         <button type="submit" id="submit_button" name="searchSubject">search</button>
-        <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button">  
+        <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button"></p>  
         <h2 name="subject_head">subject : {{subjects}} </h2>
         <p><font size="5">{{Result|safe}}</font></p>
       </form>
     <p><font size="4" color="red">Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.</font></p>
   </body>
 </html>
+{% endblock %}
