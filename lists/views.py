@@ -770,34 +770,48 @@ def Result(request):
 def firstTerm(request):
     dataterm_1 = Term1.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'Result.html',{'dataterm1':dataterm_1,'GPARES':dataGPA})
+    return render(request, 'firstTerm.html',{'dataterm1':dataterm_1,'GPARES':dataGPA})
 
 def secondTerm(request):
     dataterm_2 = Term2.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'Result.html',{'dataterm2':dataterm_2,'GPARES':dataGPA})
+    return render(request, 'secondTerm.html',{'dataterm2':dataterm_2,'GPARES':dataGPA})
 
+
+def thirdTerm(request):
+    dataterm_3 = Term3.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'thirdTerm.html',{'dataterm3':dataterm_3,'GPARES':dataGPA})
+
+
+def fourthTerm(request):
+    dataterm_4 = Term4.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'fourthTerm.html',{'dataterm4':dataterm_4,'GPARES':dataGPA})
+
+
+def fifthTerm(request):
+    dataterm_5 = Term5.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'fifthTerm.html',{'dataterm5':dataterm_5,'GPARES':dataGPA})
+
+def sixthTerm(request):
+    dataterm_6 = Term6.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'sixthTerm.html',{'dataterm6':dataterm_6,'GPARES':dataGPA})
+
+def seventhTerm(request):
+    dataterm_7 = Term7.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'seventhTerm.html',{'dataterm7':dataterm_7,'GPARES':dataGPA})
+
+
+def eightTerm(request):
+    dataterm_8 = Term8.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'eightTerm.html',{'dataterm8':dataterm_8,'GPARES':dataGPA})
 
 def picFlow(request):
     return render(request, 'picFlow.html')
 
-def secondTerm(request):
-    return render(request, 'secondTerm.html')
 
-def thirdTerm(request):
-    return render(request, 'thirdTerm.html')
-
-def fourthTerm(request):
-    return render(request, 'fourthTerm.html')
-
-def fifthTerm(request):
-    return render(request, 'fifthTerm.html')
-
-def sixthTerm(request):
-    return render(request, 'sixthTerm.html')
-
-def seventhTerm(request):
-    return render(request, 'seventhTerm.html')
-
-def eightTerm(request):
-    return render(request, 'eightTerm.html')
