@@ -452,6 +452,9 @@ def termselect(request):
 def flow(request):
     return render(request, 'flow.html')
 
+def listOfSubject(request) :
+    return render(request, 'subject.html')
+
 def Graph(request):
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
