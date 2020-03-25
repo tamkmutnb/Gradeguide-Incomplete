@@ -3,6 +3,13 @@
 <html>
   <body>
     <style>
+    #rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 100%;
+    height: 90%;
+    }
     hr.new5 {
       border: 2px solid purple;
       border-radius: 2px;
@@ -24,7 +31,7 @@
           <button type="submit" class="btn btn-warning " id="submit_button" name="searchSubject">search</button>
           <input type="button" class="btn btn-danger " onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button"></p>
           <h2 name="subject_head">subject : {{subjects}} </h2>
-          <p2 name="result_search"><font size="5">{{Result|safe}}</font></p2>
+          <p id="rcorners2"><p2 name="result_search"><font size="5">{{Result|safe}}</font></p2></p>
         </div>
       </form>
     <br>
