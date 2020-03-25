@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2 align="center">TERM 8</h2>
+<hr>
+<h2 align="center">TERM 1</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -10,7 +11,7 @@
       <th scope="col">Grade</th>
     </tr>
   </thead>
-    {% for itemlist in dataterm8 %}
+    {% for itemlist in dataterm1 %}
   <tbody>
     <tr>
       <th scope="row">{{itemlist.id}}</th>
@@ -23,7 +24,10 @@
 </table>
 <h3>GPA : </h3>
 {% for listGPA in GPARES %}
-  <h3>{{listGPA.GPA_8}}</h3>
+  <h3>{{listGPA.GPA_1}}</h3>
 {% endfor %}
+<br>
+<hr>
+
 
 {% endblock %}

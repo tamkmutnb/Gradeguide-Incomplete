@@ -759,13 +759,24 @@ def Graph(request):
     dataterm_7 = Term7.objects.all()
     dataterm_8 = Term8.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
+    return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'dataterm3':dataterm_3,'dataterm4':dataterm_4,'dataterm5':dataterm_5,'dataterm6':dataterm_6,'dataterm7':dataterm_7,'dataterm8':dataterm_8,'GPARES':dataGPA})
 
 def Result(request):
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
     dataGPA = GPA.objects.all()
     return render(request, 'Result.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
+
+def firstTerm(request):
+    dataterm_1 = Term1.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'Result.html',{'dataterm1':dataterm_1,'GPARES':dataGPA})
+
+def secondTerm(request):
+    dataterm_2 = Term2.objects.all()
+    dataGPA = GPA.objects.all()
+    return render(request, 'Result.html',{'dataterm2':dataterm_2,'GPARES':dataGPA})
+
 
 def picFlow(request):
     return render(request, 'picFlow.html')

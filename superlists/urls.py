@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'graph', views.Graph, name='Graph'),
     url(r'result', views.Result, name='Result'),
     url(r'picFlow', views.picFlow, name='picFlow'),
+    url(r'firstTerm', views.firstTerm, name='firstTerm'),
     url(r'secondTerm', views.secondTerm, name='secondTerm'),
     url(r'thirdTerm', views.thirdTerm, name='thirdTerm'),
     url(r'fourthTerm', views.fourthTerm, name='fourthTerm'),
