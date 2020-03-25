@@ -438,7 +438,11 @@ def calGrade(request):
                 Term8.GPA = res
                 return render(request, 'home.html')
         else:
+<<<<<<< HEAD
             message = "Please select term for save your grade"
+=======
+            message = 'Please select term before saving grade'
+>>>>>>> c2679e748d0437fa5a8758b734244a5e6c6ec0ca
             return render(request, 'home.html',{'message':message})
 def termselect(request):
 
@@ -451,7 +455,14 @@ def flow(request):
 def Graph(request):
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
+    dataterm_3 = Term3.objects.all()
+    dataterm_4 = Term4.objects.all()
+    dataterm_5 = Term5.objects.all()
+    dataterm_6 = Term6.objects.all()
+    dataterm_7 = Term7.objects.all()
+    dataterm_8 = Term8.objects.all()
     dataGPA = GPA.objects.all()
+<<<<<<< HEAD
     return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
 
 def Result(request):
@@ -460,6 +471,10 @@ def Result(request):
     dataGPA = GPA.objects.all()
     return render(request, 'Result.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
 
+=======
+
+    return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'dataterm3':dataterm_3,'dataterm4':dataterm_4,'dataterm5':dataterm_5,'dataterm6':dataterm_6,'dataterm7':dataterm_7,'dataterm8':dataterm_8,'GPARES':dataGPA})
+>>>>>>> c2679e748d0437fa5a8758b734244a5e6c6ec0ca
 def picFlow(request):
     return render(request, 'picFlow.html')
 
