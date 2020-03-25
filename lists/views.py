@@ -463,159 +463,163 @@ def flow(request):
             Semister3 : Statistics for Computer Engineer"""
         #3ComExplo
         elif subjects == "Computer Engineering Exploration" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #4PhysicsI
         elif subjects == "Physics I" :
-            
+            Result = "Semister2 : Physics II"
         #5PhyLabI
         elif subjects == "Physics Laboratory I" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #6EnglishI
         elif subjects == "Language Elective Course I" :
-            
+            Result = "Language Elective Course II"
         #7TableTennis
         elif subjects == "Physical Education Elective Course I" :
-            
+            Result = "Physical Education Elective Course II"
         #8ManSo
         elif subjects == "Social Sciences Elective Course" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #9Intro
         elif subjects == "Introduction to Engineer" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #10Circuit
         elif subjects == "Electric Circuit Theory" :
-            
+            Result = "Semister4 : Analog and Digital Electronics"
         #11CircuitLab
         elif subjects == "Electric Circuit Lab" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #12Algo
         elif subjects == "Algorithms and Data Structure" :
-            
+            Result = """Semister3 : Software Development Practice I <br />
+            Semister5 : Computer Organization <br />
+            Semister6 : Database Systems"""
         #13Work Ethics
         elif subjects == "Work Ethics" :
-           
+            Result = "The subject hasn't other subjects to connect the flow"
         #14MathII
         elif subjects == "Engineering Mathematics II" :
-        
+            Result = """Semister3 : Discrete Mathematics <br />
+            Semister3 : Introduction to Signals and System"""
         #15PhysicsII
         elif subjects == "Physics II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #16PhyLab2
         elif subjects == "Physics Laboratory II" :
-           
+            Result = "The subject hasn't other subjects to connect the flow"
         #17EnglishII
         elif subjects == "Language Elective Course II" :
-            
+            Result = "Language Elective Course III"
         #18Basketball
         elif subjects == "Physical Education Elective Course II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #19Stat
         elif subjects == "Statistics for Computer Engineer" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #20Signal
         elif subjects == "Introduction to Signals and System" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #21Digital
         elif subjects == "Logic Design of Digital System" :
-            
+            Result = """Semister3 : Digital System Design Laboratory <br />
+            Semister4 : Computer Organization"""
         #22DigiLab
         elif subjects == "Digital System Design Laboratory" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #23SoftwareI
         elif subjects == "Software Development Practice I" :
-           
+            Result = "Semister4 : Software Development Practice II"
         #24Discrete Math
         elif subjects == "Discrete Mathematics" :
-            
+            Result = "Semister6 : Database Systems"
         #25PhyLife
         elif subjects == "Science and Maths Elective I" :
-            
+            Result = "Science and Maths Elective II"
         #26SoftwareII
         elif subjects == "Software Development Practice II" :
-            
+            Result = "Semister5 : Software Engineering"
         #27NetworkI
         elif subjects == "Computer Networks I" :
-            
+            Result = "Semister5 : Computer Networks II"
         #28ComOr
         elif subjects == "Computer Organization" :
-            
+            Result = "Semister5 : Embedded System Design"
         #29Ubi
         elif subjects == "Ubiquitous Computing" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #30Analog
         elif subjects == "Analog and Digital Electronics" :
-            
+            Result = "Semister5 : Analog and Digital Electronics Lab"
         #31GenMath
         elif subjects == "Science and Maths Elective II" :
-            
+            Result = "Science and Maths Elective III"
         #32SoftEng
         elif subjects == "Software Engineering" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #33NetworkII
         elif subjects == "Computer Networks II" :
-            
+            Result = "Semister6 : Computer Networks Lab"
         #34OS
         elif subjects == "Operating Systems" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #35Embedded
         elif subjects == "Embedded System Design" :
-            
+            Result = "Semister6 : Embedded System Design Laboratory"
         #36AnalogLab
         elif subjects == "Analog and Digital Electronics Lab" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #37Language Elective III
         elif subjects == "Language Elective Course III" :
-            
+            Result = "Language Elective Course IV"
         #38Database
         elif subjects == "Database Systems" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #39NetworkLab
         elif subjects == "Computer Networks Lab" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #40EmbeddedLab
         elif subjects == "Embedded System Design Laboratory" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #41Language Elective IV
         elif subjects == "Language Elective Course IV" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #42Computer Eng. Elective Course I
         elif subjects == "Computer Eng. Elective Course I" :
-            
+            Result = "Computer Eng. Elective Course II"
         #43Computer Eng. Elective Course II
         elif subjects == "Computer Eng. Elective Course II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #44Humanities Elective Course I
         elif subjects == "Humanities Elective Course I" :
-            
+            Result = "Humanities Elective Course II"
         #45ProjectI
         elif subjects == "Project I" :
-            
+            Result = "Semister8 : Project II"
         #46Free Elective Course I
         elif subjects == "Free Elective Course I" :
-            
+            Result = "Free Elective Course I"
         #47Humanities Elective Course II
         elif subjects == "Humanities Elective Course II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #48Computer Eng. Elective Course III
         elif subjects == "Computer Eng. Elective Course III" :
-            
+            Result = "Computer Eng. Elective Course IV"
         #49Computer Eng. Elective Course IV
         elif subjects == "Computer Eng. Elective Course IV" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #50ProjectII
         elif subjects == "Project II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #51Computer Eng. Seminar
         elif subjects == "Computer Eng. Seminar" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #52Free Elective Course II
         elif subjects == "Free Elective Course II" :
-            
+            Result = "The subject hasn't other subjects to connect the flow"
         #53Science and Maths Elective III
         elif subjects == "Science and Maths Elective III" :
+            Result = "The subject hasn't other subjects to connect the flow"
     
-    return render(request, 'flow.html',{'subjects':subjects})
-
+    return render(request, 'flow.html',{'subjects':subjects, 'Result':Result})
 def listOfSubject(request) :
     listSemister = """ Programming Fundamental <br />
             Engineering Mathematics I <br />
