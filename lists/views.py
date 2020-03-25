@@ -804,10 +804,11 @@ def Graph(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
+    newGPAX = '%.2f' % resGPAX
     return render(request, 'Graph.html', {'dataterm1': dataterm_1, 'dataterm2': dataterm_2, 'dataterm3': dataterm_3,
                                           'dataterm4': dataterm_4, 'dataterm5': dataterm_5, 'dataterm6': dataterm_6,
                                           'dataterm7': dataterm_7, 'dataterm8': dataterm_8, 'GPARES': dataGPA,
-                                          'res_GPAX': resGPAX})
+                                          'res_GPAX': newGPAX})
 def Result(request):
     dataGPA = GPA.objects.all()
     if len(dataGPA) == 0:
@@ -845,7 +846,9 @@ def firstTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'firstTerm.html', {'dataterm1':dataterm_1,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'firstTerm.html', {'dataterm1':dataterm_1,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def secondTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_2 = Term2.objects.all()
@@ -875,7 +878,9 @@ def secondTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'secondTerm.html', {'dataterm2':dataterm_2,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'secondTerm.html', {'dataterm2':dataterm_2,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def thirdTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_3 = Term3.objects.all()
@@ -905,7 +910,9 @@ def thirdTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'thirdTerm.html', {'dataterm3':dataterm_3,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'thirdTerm.html', {'dataterm3':dataterm_3,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def fourthTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_4 = Term4.objects.all()
@@ -935,7 +942,9 @@ def fourthTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'fourthTerm.html', {'dataterm4':dataterm_4,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'fourthTerm.html', {'dataterm4':dataterm_4,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def fifthTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_5 = Term5.objects.all()
@@ -965,7 +974,9 @@ def fifthTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'fifthTerm.html', {'dataterm5':dataterm_5,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'fifthTerm.html', {'dataterm5':dataterm_5,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def sixthTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_6 = Term6.objects.all()
@@ -995,7 +1006,8 @@ def sixthTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'sixthTerm.html', {'dataterm6':dataterm_6,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'sixthTerm.html', {'dataterm6':dataterm_6,'GPARES':dataGPA,'res_GPAX': newGPAX})
 
 def seventhTerm(request):
     dataterm_7 = Term7.objects.all()
@@ -1026,7 +1038,9 @@ def seventhTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'seventhTerm.html', {'dataterm7':dataterm_7,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'seventhTerm.html', {'dataterm7':dataterm_7,'GPARES':dataGPA,'res_GPAX': newGPAX})
+
 def eightTerm(request):
     dataGPA = GPA.objects.all()
     dataterm_8 = Term8.objects.all()
@@ -1056,7 +1070,8 @@ def eightTerm(request):
     else:
         countunit+=1
     resGPAX = float(GPAX) / float(countunit)
-    return render(request, 'eightTerm.html', {'dataterm8':dataterm_8,'GPARES':dataGPA,'res_GPAX': resGPAX})
+    newGPAX = '%.2f' % resGPAX
+    return render(request, 'eightTerm.html', {'dataterm8':dataterm_8,'GPARES':dataGPA,'res_GPAX': newGPAX})
 
 def picFlow(request):
     return render(request, 'picFlow.html')
