@@ -84,8 +84,8 @@ def calGrade(request):
 
                 Term1.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
 
-
                 GPA.objects.create(GPA_1=res)
+
                 return render(request, 'home.html')
             else:
                 Term1.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
@@ -141,10 +141,7 @@ def calGrade(request):
                 Term2.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term2.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
-
-
-                GPA.objects.create(GPA_2=res)
-
+                GPA.objects.filter(pk=1).update(GPA_2=res)
                 return render(request, 'home.html')
             else:
                 Term2.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
@@ -199,8 +196,7 @@ def calGrade(request):
                 Term3.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term3.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
-
-                GPA.objects.create(GPA_3=res)
+                GPA.objects.filter(pk=1).update(GPA_3=res)
 
                 return render(request, 'home.html')
             else:
@@ -257,8 +253,7 @@ def calGrade(request):
                 Term4.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term4.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
-
-                GPA.objects.create(GPA_4=res)
+                GPA.objects.filter(pk=1).update(GPA_4=res)
 
                 return render(request, 'home.html')
             else:
@@ -313,8 +308,8 @@ def calGrade(request):
                 Term5.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term5.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
+                GPA.objects.filter(pk=1).update(GPA_5=res)
 
-                GPA.objects.create(GPA_5=res)
 
                 return render(request, 'home.html')
             else:
@@ -369,8 +364,8 @@ def calGrade(request):
                 Term6.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term6.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
+                GPA.objects.filter(pk=1).update(GPA_6=res)
 
-                GPA.objects.create(GPA_6=res)
 
                 return render(request, 'home.html')
             else:
@@ -425,8 +420,8 @@ def calGrade(request):
                 Term7.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term7.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
+                GPA.objects.filter(pk=1).update(GPA_7=res)
 
-                GPA.objects.create(GPA_7=res)
 
                 return render(request, 'home.html')
             else:
@@ -483,9 +478,7 @@ def calGrade(request):
                 Term8.objects.create(subject=request.POST['subject8name'],unit=request.POST['subject8Unit'],Grade=request.POST['subject8Grade'],GPA=res)
 
                 Term8.objects.create(subject=request.POST['subject9name'],unit=request.POST['subject9Unit'],Grade=request.POST['subject9Grade'],GPA=res)
-
-                GPA.objects.create(GPA_8=res)
-
+                GPA.objects.filter(pk=1).update(GPA_8=res)
                 return render(request, 'home.html')
             else:
                 Term6.objects.filter(pk=1).update(subject =request.POST['subject1name'], unit=request.POST['subject1Unit'],Grade=request.POST['subject1Grade'],GPA=res)
