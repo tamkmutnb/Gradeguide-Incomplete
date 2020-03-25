@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'sixthTerm', views.sixthTerm, name='sixthTerm'),
     url(r'seventhTerm', views.seventhTerm, name='seventhTerm'),
     url(r'eightTerm', views.eightTerm, name='eightTerm'),
+    url(r'about', views.about, name='about'),
     #url(r'home', views.home_page, name='calGrade'),
     #admin page
     #path('admin/', admin.site.urls),

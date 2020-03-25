@@ -807,4 +807,5 @@ def eightTerm(request):
 def picFlow(request):
     return render(request, 'picFlow.html')
 
-
+def about(request):
+    return render(request, 'about.html')
