@@ -41,12 +41,20 @@ def signup(request):
 def calGrade(request):
     term1 = Term1()
     term2 = Term2()
+    not_input = "Plese check your infromation before saving."
+    checkinput = float(request.POST.get('subject1Unit')) + float(request.POST.get('subject1Grade'))+\
+                 float(request.POST.get('subject2Unit')) + float(request.POST.get('subject2Grade'))+\
+                 float(request.POST.get('subject3Unit')) + float(request.POST.get('subject3Grade'))+\
+                 float(request.POST.get('subject4Unit')) + float(request.POST.get('subject4Grade'))+\
+                 float(request.POST.get('subject5Unit')) + float(request.POST.get('subject5Grade'))+\
+                 float(request.POST.get('subject6Unit')) + float(request.POST.get('subject6Grade'))+\
+                 float(request.POST.get('subject7Unit')) + float(request.POST.get('subject7Grade'))+\
+                 float(request.POST.get('subject8Unit')) + float(request.POST.get('subject8Grade'))+\
+                 float(request.POST.get('subject9Unit')) + float(request.POST.get('subject9Grade'))
     if len(Term1.objects.all()) <= 9:
-        if request.POST.get('subject1Term') == "0":
-            term_0 = "selected your term"
-            data = Term1.objects.all()
-            return render(request, 'home.html',{'term0':term_0,'list':data})
         if request.POST.get('subjectTerm') == "1":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -105,6 +113,8 @@ def calGrade(request):
                 return render(request, 'home.html')
 
         if request.POST.get('subjectTerm') == "2":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -157,9 +167,11 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_2=res)
 
                 term2.GPA = res
-                return render(request, 'home.html',{'result':res, 'name':request.user.username})
+                return render(request, 'home.html',{'result':res})
 
         if request.POST.get('subjectTerm') == "3":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -216,6 +228,8 @@ def calGrade(request):
 
 
         if request.POST.get('subjectTerm') == "4":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -271,6 +285,8 @@ def calGrade(request):
                 Term4.GPA = res
                 return render(request, 'home.html')
         if request.POST.get('subjectTerm') == "5":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -327,6 +343,8 @@ def calGrade(request):
                 Term5.GPA = res
                 return render(request, 'home.html')
         if request.POST.get('subjectTerm') == "6":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -383,6 +401,8 @@ def calGrade(request):
                 Term6.GPA = res
                 return render(request, 'home.html')
         if request.POST.get('subjectTerm') == "7":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
@@ -441,6 +461,8 @@ def calGrade(request):
 
 
         if request.POST.get('subjectTerm') == "8":
+            if checkinput == 0.0:
+                return render(request, 'home.html', {'notinput': not_input})
             sub1 = float(request.POST.get('subject1Unit')) * float(request.POST.get('subject1Grade'))
             sub2 = float(request.POST.get('subject2Unit')) * float(request.POST.get('subject2Grade'))
             sub3 = float(request.POST.get('subject3Unit')) * float(request.POST.get('subject3Grade'))
