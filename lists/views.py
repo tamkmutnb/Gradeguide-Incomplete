@@ -765,6 +765,7 @@ def listOfSubject(request) :
     return render(request, 'subject.html', {'semister1':listSemister1,'semister2':listSemister2,'semister3':listSemister3,'semister4':listSemister4,'semister5':listSemister5,'semister6':listSemister6,'semister7':listSemister7,'semister8':listSemister8})
 
 def Graph(request):
+    countunit = 0
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
     dataterm_3 = Term3.objects.all()
@@ -774,57 +775,301 @@ def Graph(request):
     dataterm_7 = Term7.objects.all()
     dataterm_8 = Term8.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'dataterm3':dataterm_3,'dataterm4':dataterm_4,'dataterm5':dataterm_5,'dataterm6':dataterm_6,'dataterm7':dataterm_7,'dataterm8':dataterm_8,'GPARES':dataGPA})
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
+    return render(request, 'Graph.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'dataterm3':dataterm_3,'dataterm4':dataterm_4,'dataterm5':dataterm_5,'dataterm6':dataterm_6,'dataterm7':dataterm_7,'dataterm8':dataterm_8,'GPARES':dataGPA,'res_GPAX':resGPAX})
 
 def Result(request):
+    dataGPA = GPA.objects.all()
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
     dataterm_1 = Term1.objects.all()
     dataterm_2 = Term2.objects.all()
     dataGPA = GPA.objects.all()
     return render(request, 'Result.html',{'dataterm1':dataterm_1,'dataterm2':dataterm_2,'GPARES':dataGPA})
-
 def firstTerm(request):
+    countunit = 0
+    dataGPA = GPA.objects.all()
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
     dataterm_1 = Term1.objects.all()
-    dataGPA = GPA.objects.all()
-    return render(request, 'firstTerm.html',{'dataterm1':dataterm_1,'GPARES':dataGPA})
-
+    return render(request, 'firstTerm.html',{'dataterm1':dataterm_1,'GPARES':dataGPA,'res_GPAX':resGPAX})
 def secondTerm(request):
+    dataGPA = GPA.objects.all()
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
     dataterm_2 = Term2.objects.all()
-    dataGPA = GPA.objects.all()
-    return render(request, 'secondTerm.html',{'dataterm2':dataterm_2,'GPARES':dataGPA})
-
-
+    return render(request, 'secondTerm.html',{'dataterm2':dataterm_2,'GPARES':dataGPA,'res_GPAX':resGPAX})
 def thirdTerm(request):
+    dataGPA = GPA.objects.all()
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
     dataterm_3 = Term3.objects.all()
-    dataGPA = GPA.objects.all()
-    return render(request, 'thirdTerm.html',{'dataterm3':dataterm_3,'GPARES':dataGPA})
-
-
+    return render(request, 'thirdTerm.html',{'dataterm3':dataterm_3,'GPARES':dataGPA,'res_GPAX':resGPAX})
 def fourthTerm(request):
+    dataGPA = GPA.objects.all()
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
     dataterm_4 = Term4.objects.all()
-    dataGPA = GPA.objects.all()
-    return render(request, 'fourthTerm.html',{'dataterm4':dataterm_4,'GPARES':dataGPA})
-
-
+    return render(request, 'fourthTerm.html',{'dataterm4':dataterm_4,'GPARES':dataGPA,'res_GPAX':resGPAX})
 def fifthTerm(request):
-    dataterm_5 = Term5.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'fifthTerm.html',{'dataterm5':dataterm_5,'GPARES':dataGPA})
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
+    dataterm_5 = Term5.objects.all()
+    return render(request, 'fifthTerm.html',{'dataterm5':dataterm_5,'GPARES':dataGPA,'res_GPAX':resGPAX})
 
 def sixthTerm(request):
-    dataterm_6 = Term6.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'sixthTerm.html',{'dataterm6':dataterm_6,'GPARES':dataGPA})
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
+    dataterm_6 = Term6.objects.all()
+    return render(request, 'sixthTerm.html',{'dataterm6':dataterm_6,'GPARES':dataGPA,'res_GPAX':resGPAX})
 
 def seventhTerm(request):
+    dataGPA = GPA.objects.all()
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
     dataterm_7 = Term7.objects.all()
-    dataGPA = GPA.objects.all()
-    return render(request, 'seventhTerm.html',{'dataterm7':dataterm_7,'GPARES':dataGPA})
-
-
+    return render(request, 'seventhTerm.html',{'dataterm7':dataterm_7,'GPARES':dataGPA,'res_GPAX':resGPAX})
 def eightTerm(request):
-    dataterm_8 = Term8.objects.all()
     dataGPA = GPA.objects.all()
-    return render(request, 'eightTerm.html',{'dataterm8':dataterm_8,'GPARES':dataGPA})
+    countunit = 0
+    if len(dataGPA) == 0:
+        GPA.objects.create(GPA_1=0, GPA_2=0, GPA_3=0, GPA_4=0, GPA_5=0, GPA_6=0, GPA_7=0, GPA_8=0, )
+    for i in dataGPA:
+        GPAX = float(i.GPA_1)+float(i.GPA_2)+float(i.GPA_3)+float(i.GPA_4)+float(i.GPA_5)+float(i.GPA_6)+float(i.GPA_7)+float(i.GPA_8)
+    if countunit == 0:
+        countunit +=1
+    else:
+        countunit = 0
+        for unit in dataGPA:
+            if unit.GPA_1 != "0" :
+                countunit+=1
+            if unit.GPA_2 != "0" :
+                countunit+=1
+            if unit.GPA_3 != "0" :
+                countunit+=1
+            if unit.GPA_4 != "0" :
+                countunit+=1
+            if unit.GPA_5 != "0" :
+                countunit+=1
+            if unit.GPA_6 != "0" :
+                countunit+=1
+            if unit.GPA_7 != "0" :
+                countunit+=1
+            if unit.GPA_8 != "0" :
+                countunit+=1
+    unitGPAX = countunit
+    resGPAX = int(GPAX)/int(unitGPAX)
+    dataterm_8 = Term8.objects.all()
+    return render(request, 'eightTerm.html',{'dataterm8':dataterm_8,'GPARES':dataGPA,'res_GPAX':resGPAX})
 
 def picFlow(request):
     return render(request, 'picFlow.html')
