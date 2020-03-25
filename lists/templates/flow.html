@@ -10,7 +10,7 @@
         <button type="submit" id="submit_button" name="searchSubject">search</button>
         <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button">  
         <h2 name="subject_head">subject : {{subjects}} </h2>
-        <p>{{Result}}</p>
+        <p>{{Result|safe}}</p>
       </form>
     </body>
 </html>
