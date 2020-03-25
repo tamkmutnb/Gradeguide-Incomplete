@@ -34,6 +34,11 @@ class SignUpTest(TestCase):
         example_users = User.objects.all()
         self.assertEqual(example_users.count(), 4)
 
+class LogInTest(TestCase):
+    def test_many_users_signup(self):
+        User.objects.create_user(username='Panachai', password='Panachaipasswordisveryeasy')
+        self.client.login(username="Panachai", password="Panachaipasswordisveryeasy")
+
 class GradeCalTest(TestCase):
     def test_gradeCal_can_save_first_term_data(self):
         example_user = Userinfo.objects.create(name='example_user ')
@@ -91,3 +96,5 @@ class GradeCalTest(TestCase):
         self.assertEqual(example_saved_user.gpa.first().GPA_6, '1.5')
         self.assertEqual(example_saved_user.gpa.first().GPA_7, '1')
         self.assertEqual(example_saved_user.gpa.first().GPA_8, '0.5')
+
+    # def test_can_calculate_GPA(self):
