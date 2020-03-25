@@ -281,130 +281,96 @@ class NewVisitorTest(unittest.TestCase):
 
         '''End of Checking Login'''
 
-    def test_flow(self):
-        # basic test
-        self.browser.get('http://localhost:8000')
-        '''Test Only Index'''
-        # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
-        # She notices the page title and header mention to-do lists
-        self.assertIn('', self.browser.title)
+    def test_subjects_button_flow(self):
+        # เธอคลิกเข้ามาที่ link flow
+        self.browser.get('http://localhost:8000/flow.html')
+        time.sleep(5)
+
+        # test Flow H1 text
+        # เธอเห็นคำว่า Flow ซึ่งเป็นหัวข้อใหญ่
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('GradeGuide', header_text)
+        self.assertEqual('Flow', header_text)
 
-        # Check HomePage, Sign Up and Log in Link
-        homepage_link = self.browser.find_element_by_link_text('Home page').text
-        self.assertIn('Home page', homepage_link)
+        # เธอเห็นประโยคที่อยู่ก่อนหน้าปุ่ม subjects
+        defination = self.browser.find_element_by_tag_name('p1').text
+        self.assertEqual("If you can't remember the subject's name , The Subjects button will help you. :)",defination)
 
-        signup_link = self.browser.find_element_by_link_text('Sign up').text
-        self.assertIn('Sign up', signup_link)
+        # test subjects button
+        # เธอจำชื่อวิชาไม่ได้
+        # เธอจึงคลิกไปที่ปุ่ม subjects เพื่อที่เธอจะได้ดูชื่อวิชา
+        subject_button = self.browser.find_element_by_id("subject_button")
+        subject_button.click()
+        time.sleep(5)
 
-        login_link = self.browser.find_element_by_link_text('Log in').text
-        self.assertIn('Log in', login_link)
+        self.fail('Finish the test!')
 
-        welcome_text = self.browser.find_element_by_tag_name('h2').text
-        self.assertIn('Welcome to GradeGuide !', welcome_text)
-
-        totaluser_text = self.browser.find_element_by_tag_name('p').text
-        self.assertIn('Total users registered:', totaluser_text)
-
-        # Check User Loging in
-        login_click = self.browser.find_element_by_link_text('Log in')
-        login_click.click()
-
-        self.assertIn('', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('GradeGuide', header_text)
-
-        # Check HomePage, Sign Up and Log in Link
-        homepage_link = self.browser.find_element_by_link_text('Home page').text
-        self.assertIn('Home page', homepage_link)
-
-        signup_link = self.browser.find_element_by_link_text('Sign up').text
-        self.assertIn('Sign up', signup_link)
-
-        login_link = self.browser.find_element_by_link_text('Log in').text
-        self.assertIn('Log in', login_link)
-
-        login_h2 = self.browser.find_element_by_tag_name('h2').text
-        self.assertIn('Log in', login_h2)
-        # check Label Username:
-        username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
-        self.assertIn('Username:', username_label)
-        # check Label Input Box
-        username_box = self.browser.find_element_by_id("id_username")
-        self.assertEqual(
-            username_box.get_attribute('type'),
-            'text'
-        )
-        # check Label Password:
-        password_label = self.browser.find_element_by_xpath("//label[@for='id_password']").text
-        self.assertIn('Password:', password_label)
-        # check Label Input Pasword Box
-        password_box = self.browser.find_element_by_id("id_password")
-        self.assertEqual(
-            password_box.get_attribute('type'),
-            'password'
-        )
-
-        # check button
-        login_button = self.browser.find_element_by_tag_name("button")
-        self.assertEqual(
-            login_button.get_attribute('type'),
-            'submit'
-        )
-        # end basic test
-
-        # log in
-        username_box.send_keys('jesselingard')
-        password_box.send_keys('lingard123456789')
-        # username_box.send_keys('tamtong007')
-        # password_box.send_keys('o87525o135')
-        login_button.click()
+    def test_search_flow(self):
+        # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
 
         self.assertIn('', self.browser.title)
 
-        # test Flow H1 text
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Flow', header_text)
-
-        # test input Search text
-        subject_head = self.browser.find_element_by_tag_name('h4').text
-        self.assertIn('subject :', subject_head)
-
         # test search box
+        # เธอเห็นช่องสำหรับใส่ชื่อวิชาเพื่อค้นหาวิชาที่เป็นตัวต่อกัน
+        # เธอจึงพิมพ์วิชา Programming Fundamental ลงไป
         subject_placeholder = self.browser.find_element_by_id("search_placeholder")
         self.assertEqual(
             subject_placeholder.get_attribute('type'),
             'text'
         )
+
+        subject_placeholder.send_keys('Programming Fundamental')
+        time.sleep(5)
+
         # test submit button
+        # เธอจึงกดปุ่ม search เพื่อทำการหาตัวต่อของวิชา Programming Fundamental
         submit_button = self.browser.find_element_by_id("submit_button")
         self.assertEqual(
             submit_button.get_attribute('type'),
             'submit'
         )
+        submit_button.click()
+        time.sleep(10)
+
+        # test input Search text
+        # เธอเห็นหัวข้อ subject
+        # หลังจากที่เธอกด search แล้ว เธอพบว่าวิชาที่เธฮ search ไปปรากฏอยู่หลังหัวข้อ subject
+        subject_head = self.browser.find_element_by_tag_name('h2').text
+        self.assertEqual('subject : Programming Fundamental', subject_head)
+
+        # test search result
+        # เธอเห็นผลของการ search ของเธอ หลังจากที่กดปุ่ม search ไป
+        result_search = self.browser.find_element_by_tag_name('p2').text
+        self.assertEqual("Semister2 : Algorithms and Data Structures\nSemister5 : Operating Systems",result_search)
+
+        # test Note
+        # เธอเห็นประโยคด้านล่างเกี่ยวกับวิชาเลือก
+        note = self.browser.find_element_by_tag_name('p3').text
+        self.assertEqual("Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.", note)
+
+        self.fail('Finish the test!')
+        
+    def test_flow_pic(self):
+        # เธอคลิกเข้ามาที่ link flow
+        self.browser.get('http://localhost:8000/flow.html')
+        time.sleep(5)
 
         # test fullflow button
-        fullflow_button = self.browser.find_element_by_id("fullflow_button")
-        self.assertEqual(
-            fullflow_button.get_attribute('type'),
-            'button'
-        )
-
-    def test_flow_pic(self):
-        self.browser.get('http://localhost:8000/flow.html')
-
+        # เธออยากดูภาพรวมของวิชาทั้งหมดที่เธอต้องเรียน
+        # เธอจึงคลิกไปที่ปุ่ม Full Flow เพื่อไปยังรูป flow
         flow_button = self.browser.find_element_by_id("fullflow_button")
         flow_button.click()
 
+        # test can find the flow picture
+        # เธอเห็นภาพวิชาตัวต่อทั้งหมด
         flow_image = self.browser.find_element_by_id("image")
         self.assertEqual(
             flow_image.get_attribute('id'),
             'image'
         )
-        time.sleep(20)
+        time.sleep(10)
 
+        self.fail('Finish the test!')
     def test_home(self):
         # เมื่อเขากดเข้าไปที่หน้า signup
         self.browser.get('http://localhost:8000/signup')

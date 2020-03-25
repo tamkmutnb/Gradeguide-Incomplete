@@ -3,17 +3,17 @@
 <html>
   <body>
     <h1>Flow</h1>
-    <p>If you can't remember the subject's name , The Subjects button will help you. :)
-    <input type="button" onclick="window.location.href='subject.html'" value="Subjects" id="subject_button"></p>
+    <p1>If you can't remember the subject's name , The Subjects button will help you. :)
+    <input type="button" onclick="window.location.href='subject.html'" value="Subjects" id="subject_button"></p1>
       <form action='flow' method='POST'>
         {% csrf_token %}
-        <p><input type="text" placeholder="Search.." name="searchFlow" size="120" id="search_placeholder" />
+        <input type="text" placeholder="Search.." name="searchFlow" size="120" id="search_placeholder" />
         <button type="submit" id="submit_button" name="searchSubject">search</button>
-        <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button"></p>  
+        <input type="button" onclick="window.location.href='picFlow.html'" value="Full Flow" id="fullflow_button">  
         <h2 name="subject_head">subject : {{subjects}} </h2>
-        <p><font size="5">{{Result|safe}}</font></p>
+        <p2 name="result_search"><font size="5">{{Result|safe}}</font></p2>
       </form>
-    <p><font size="4" color="red">Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.</font></p>
+    <p3><font size="4" color="red">Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.</font></p3>
   </body>
 </html>
 {% endblock %}
