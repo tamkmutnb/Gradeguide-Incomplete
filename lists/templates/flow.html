@@ -1,8 +1,7 @@
-{% extends 'layout.html' %}
-{% block content %}
 <html>
   <body>
     <h1>Flow</h1>
+    <p>If you can't remember the subject's name , The Subjects button will help you. :)
     <input type="button" onclick="window.location.href='subject.html'" value="Subjects" id="subject_button"></p>
       <form action='flow' method='POST'>
         {% csrf_token %}
@@ -12,6 +11,5 @@
         <h2 name="subject_head">subject : {{subjects}} </h2>
         <p>{{Result|safe}}</p>
       </form>
-    </body>
+  </body>
 </html>
-{% endblock %}
