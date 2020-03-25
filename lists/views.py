@@ -455,10 +455,12 @@ def flow(request):
     if 'searchSubject' in request.POST :
         #1ProFund
         if subjects == "Programming Fundamental" :
-            
+            Result = """Semister2 : Algorithms and Data Structures <br />
+            Semister5 : Operating Systems"""
         #2MathI
         elif subjects == "Engineering Mathematics I" :
-            
+            Result = """Semister2 : Math II <br />
+            Semister3 : Statistics for Computer Engineer"""
         #3ComExplo
         elif subjects == "Computer Engineering Exploration" :
             
