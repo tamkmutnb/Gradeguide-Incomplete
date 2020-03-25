@@ -1,6 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
 <html>
   <body>
     <h1 align="center">List of Subjects</h1>
+    <p></p>
     <h2 align="center">-------------------- Semister 1 ----------------------</h2>
         <p align="center"><font size="5" >{{semister1|safe}}</font></p>
     <h2 align="center">-------------------- Semister 2 ----------------------</h2>
@@ -19,3 +22,4 @@
         <p align="center"><font size="5" >{{semister8|safe}}</font></p>
   </body>
 </html>
+{% endblock %}
