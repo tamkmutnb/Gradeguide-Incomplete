@@ -9,6 +9,7 @@
             {% else %}visitor{% endif %}</p>
         <hr>
         <br>
+        <p><font size="5" color="B03A2E">{{message}}</font></p>
 <form action="calGrade" method="POST" >
     {% csrf_token %}
     Selected your term :
@@ -22,6 +23,8 @@
     <option value="6">Term: 6</option>
     <option value="7">Term: 7</option>
     <option value="8">Term: 8</option>
+
+
 </select><br>
     <hr>
         <table class="table table-hover">
