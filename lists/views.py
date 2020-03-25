@@ -450,7 +450,169 @@ def termselect(request):
     return render(request, 'home.html', {'term1': termsel})
 
 def flow(request):
-    return render(request, 'flow.html')
+    Result = ''
+    subjects = str(request.POST.get('searchFlow',''))
+    if 'searchSubject' in request.POST :
+        #1ProFund
+        if subjects == "Programming Fundamental" :
+            
+        #2MathI
+        elif subjects == "Engineering Mathematics I" :
+            
+        #3ComExplo
+        elif subjects == "Computer Engineering Exploration" :
+            
+        #4PhysicsI
+        elif subjects == "Physics I" :
+            
+        #5PhyLabI
+        elif subjects == "Physics Laboratory I" :
+            
+        #6EnglishI
+        elif subjects == "Language Elective Course I" :
+            
+        #7TableTennis
+        elif subjects == "Physical Education Elective Course I" :
+            
+        #8ManSo
+        elif subjects == "Social Sciences Elective Course" :
+            
+        #9Intro
+        elif subjects == "Introduction to Engineer" :
+            
+        #10Circuit
+        elif subjects == "Electric Circuit Theory" :
+            
+        #11CircuitLab
+        elif subjects == "Electric Circuit Lab" :
+            
+        #12Algo
+        elif subjects == "Algorithms and Data Structure" :
+            
+        #13Work Ethics
+        elif subjects == "Work Ethics" :
+           
+        #14MathII
+        elif subjects == "Engineering Mathematics II" :
+        
+        #15PhysicsII
+        elif subjects == "Physics II" :
+            
+        #16PhyLab2
+        elif subjects == "Physics Laboratory II" :
+           
+        #17EnglishII
+        elif subjects == "Language Elective Course II" :
+            
+        #18Basketball
+        elif subjects == "Physical Education Elective Course II" :
+            
+        #19Stat
+        elif subjects == "Statistics for Computer Engineer" :
+            
+        #20Signal
+        elif subjects == "Introduction to Signals and System" :
+            
+        #21Digital
+        elif subjects == "Logic Design of Digital System" :
+            
+        #22DigiLab
+        elif subjects == "Digital System Design Laboratory" :
+            
+        #23SoftwareI
+        elif subjects == "Software Development Practice I" :
+           
+        #24Discrete Math
+        elif subjects == "Discrete Mathematics" :
+            
+        #25PhyLife
+        elif subjects == "Science and Maths Elective I" :
+            
+        #26SoftwareII
+        elif subjects == "Software Development Practice II" :
+            
+        #27NetworkI
+        elif subjects == "Computer Networks I" :
+            
+        #28ComOr
+        elif subjects == "Computer Organization" :
+            
+        #29Ubi
+        elif subjects == "Ubiquitous Computing" :
+            
+        #30Analog
+        elif subjects == "Analog and Digital Electronics" :
+            
+        #31GenMath
+        elif subjects == "Science and Maths Elective II" :
+            
+        #32SoftEng
+        elif subjects == "Software Engineering" :
+            
+        #33NetworkII
+        elif subjects == "Computer Networks II" :
+            
+        #34OS
+        elif subjects == "Operating Systems" :
+            
+        #35Embedded
+        elif subjects == "Embedded System Design" :
+            
+        #36AnalogLab
+        elif subjects == "Analog and Digital Electronics Lab" :
+            
+        #37Language Elective III
+        elif subjects == "Language Elective Course III" :
+            
+        #38Database
+        elif subjects == "Database Systems" :
+            
+        #39NetworkLab
+        elif subjects == "Computer Networks Lab" :
+            
+        #40EmbeddedLab
+        elif subjects == "Embedded System Design Laboratory" :
+            
+        #41Language Elective IV
+        elif subjects == "Language Elective Course IV" :
+            
+        #42Computer Eng. Elective Course I
+        elif subjects == "Computer Eng. Elective Course I" :
+            
+        #43Computer Eng. Elective Course II
+        elif subjects == "Computer Eng. Elective Course II" :
+            
+        #44Humanities Elective Course I
+        elif subjects == "Humanities Elective Course I" :
+            
+        #45ProjectI
+        elif subjects == "Project I" :
+            
+        #46Free Elective Course I
+        elif subjects == "Free Elective Course I" :
+            
+        #47Humanities Elective Course II
+        elif subjects == "Humanities Elective Course II" :
+            
+        #48Computer Eng. Elective Course III
+        elif subjects == "Computer Eng. Elective Course III" :
+            
+        #49Computer Eng. Elective Course IV
+        elif subjects == "Computer Eng. Elective Course IV" :
+            
+        #50ProjectII
+        elif subjects == "Project II" :
+            
+        #51Computer Eng. Seminar
+        elif subjects == "Computer Eng. Seminar" :
+            
+        #52Free Elective Course II
+        elif subjects == "Free Elective Course II" :
+            
+        #53Science and Maths Elective III
+        elif subjects == "Science and Maths Elective III" :
+    
+    return render(request, 'flow.html',{'subjects':subjects})
 
 def listOfSubject(request) :
     listSemister = """ Programming Fundamental <br />
