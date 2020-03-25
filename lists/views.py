@@ -618,6 +618,9 @@ def flow(request):
         #53Science and Maths Elective III
         elif subjects == "Science and Maths Elective III" :
             Result = "The subject hasn't other subjects to connect the flow"
+        #Other
+        else :
+            Result = "The subject isn't in the flow"
     
     return render(request, 'flow.html',{'subjects':subjects, 'Result':Result})
 def listOfSubject(request) :
