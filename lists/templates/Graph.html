@@ -12,19 +12,30 @@
 
 
       data.addRows([
-        [0,  {% for listGPA in GPARES %}
-              {{listGPA.GPA_1}}
-            {% endfor %}],
         [1,  {% for listGPA in GPARES %}
-              {{listGPA.GPA_2}}
+              {{listGPA.GPA_1}}+0
             {% endfor %}],
-        [2,  0],
-        [3,  0],
-        [4,  0],
-        [5,  0],
-        [6,  0],
-        [7,  0],
-        [8,  0]
+        [2,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_2}}+0
+            {% endfor %}],
+        [3,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_3}}+0
+            {% endfor %}],
+        [4,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_4}}+0
+            {% endfor %}],
+        [5,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_5}}+0
+            {% endfor %}],
+        [6,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_6}}+0
+            {% endfor %}],
+        [7,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_7}}+0
+            {% endfor %}],
+        [8,  {% for listGPA in GPARES %}
+              {{listGPA.GPA_8}}+0
+            {% endfor %}]
       ]);
 
       var options = {
