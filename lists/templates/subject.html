@@ -2,24 +2,47 @@
 {% block content %}
 <html>
   <body>
+    <style>
+        #rcorners2 {
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 10px;
+        width: 100%;
+        height: 90%;
+        }
+        hr.new5 {
+          border: 2px solid purple;
+          border-radius: 2px;
+        }
+    </style>
     <h1 align="center">List of Subjects</h1>
-    <p></p>
+    <hr class="new5">
+    <br>
+    <div class="container">
     <h2 align="center">-------------------- Semister 1 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister1|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister1|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 2 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister2|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister2|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 3 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister3|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister3|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 4 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister4|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister4|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 5 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister5|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister5|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 6 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister6|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister6|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 7 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister7|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister7|safe}}</font></p>
+    <br>
     <h2 align="center">-------------------- Semister 8 ----------------------</h2>
-        <p align="center"><font size="5" >{{semister8|safe}}</font></p>
+        <p id="rcorners2" align="center"><font size="5" >{{semister8|safe}}</font></p>
+    </div>
   </body>
 </html>
 {% endblock %}
