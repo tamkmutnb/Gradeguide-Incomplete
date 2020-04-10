@@ -2,6 +2,7 @@ from django.db import models
 from django.db import models
 class Userinfo(models.Model):
     #objects = None
+    #new repo for incomplete
     objects = None
     name = models.TextField(max_length=200, blank=True)
     term1 = models.ManyToManyField('Term1')
