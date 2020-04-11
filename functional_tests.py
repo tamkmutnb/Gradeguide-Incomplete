@@ -1,137 +1,99 @@
+# import selenium webdriver, time and unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import unittest
 
-class NewVisitorTest(unittest.TestCase):
 
+class NewVisitorTest(unittest.TestCase):
+    # check opening FireFox
     def setUp(self):
         self.browser = webdriver.Firefox()
 
+    # check quit FireFox
     def tearDown(self):
         self.browser.quit()
 
+    # test index Page
     def test_index(self):
-        #เอิร์ธได้ยินมาว่ามีเว็บในการคำนวณเกรดและอยากจะใช้งาน
-        #จึงเข้าเว็บไปที่หน้า Homepage
+        # เอิร์ธได้ยินมาว่ามีเว็บในการคำนวณเกรดและอยากจะใช้งาน
+        # จึงเข้าเว็บไปที่หน้า Homepage
 
         self.browser.get('http://localhost:8000')
         '''Test Only Index'''
-        #เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
+        # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
         # She notices the page title and header mention to-do lists
         self.assertIn('', self.browser.title)
+        # find element 'h1' as text = header_text var
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('GradeGuide', header_text)
-
-        #Check HomePage, Sign Up and Log in Link
-        homepage_link = self.browser.find_element_by_link_text('Home page').text
-        self.assertIn('Home page', homepage_link)
-
-        signup_link = self.browser.find_element_by_link_text('Sign up').text
-        self.assertIn('Sign up', signup_link)
-
-        login_link = self.browser.find_element_by_link_text('Log in').text
-        self.assertIn('Log in', login_link)
-
-        welcome_text = self.browser.find_element_by_tag_name('h2').text
-        self.assertIn('Welcome to GradeGuide !', welcome_text)
-
-        totaluser_text = self.browser.find_element_by_tag_name('p').text
-        self.assertIn('Total users registered:', totaluser_text)
-
-        #Check User Loging in
-        login_click = self.browser.find_element_by_link_text('Log in')
-        login_click.click()
-
-        self.assertIn('', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
+        # check if 'GradeGuide' is in header_text var
         self.assertIn('GradeGuide', header_text)
 
         # Check HomePage, Sign Up and Log in Link
+
+        # find element 'link'  = homepage_link var
         homepage_link = self.browser.find_element_by_link_text('Home page').text
+
+        # check if 'Home page' is in homepage_link var
         self.assertIn('Home page', homepage_link)
 
+        # find element 'link'  = signup_link var
         signup_link = self.browser.find_element_by_link_text('Sign up').text
+        # check if 'Sign up' is in signup_link var
         self.assertIn('Sign up', signup_link)
 
+        # find element 'link'  = login_link var
         login_link = self.browser.find_element_by_link_text('Log in').text
+        # check if 'Log in' is in login_link var
         self.assertIn('Log in', login_link)
 
-        login_h2 = self.browser.find_element_by_tag_name('h2').text
-        self.assertIn('Log in', login_h2)
-        #check Label Username:
-        username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
-        self.assertIn('Username:', username_label)
-        #check Label Input Box
-        username_box = self.browser.find_element_by_id("id_username")
-        self.assertEqual(
-            username_box.get_attribute('type'),
-            'text'
-        )
-        #check Label Password:
-        password_label = self.browser.find_element_by_xpath("//label[@for='id_password']").text
-        self.assertIn('Password:', password_label)
-        #check Label Input Pasword Box
-        password_box = self.browser.find_element_by_id("id_password")
-        self.assertEqual(
-            password_box.get_attribute('type'),
-            'password'
-        )
-
-        #check button
-        login_button = self.browser.find_element_by_tag_name("button")
-        self.assertEqual(
-            login_button.get_attribute('type'),
-            'submit'
-        )
-
-    def test_login_fail(self):
-        #BASIC TEST
-        self.browser.get('http://localhost:8000')
-        '''Test Only Index'''
-		# เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
-        # She notices the page title and header mention to-do lists
-        self.assertIn('', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('GradeGuide', header_text)
-
-        # Check HomePage, Sign Up and Log in Link
-        homepage_link = self.browser.find_element_by_link_text('Home page').text
-        self.assertIn('Home page', homepage_link)
-
-        signup_link = self.browser.find_element_by_link_text('Sign up').text
-        self.assertIn('Sign up', signup_link)
-
-        login_link = self.browser.find_element_by_link_text('Log in').text
-        self.assertIn('Log in', login_link)
-
+        # find element 'h2'  = welcome_text var
         welcome_text = self.browser.find_element_by_tag_name('h2').text
+        # check if 'Welcome to GradeGuide !' is in welcome_text var
         self.assertIn('Welcome to GradeGuide !', welcome_text)
 
+        # find element 'p'  = totaluser_text var
         totaluser_text = self.browser.find_element_by_tag_name('p').text
+        # check if 'Total users registered:' is in totaluser_text var
         self.assertIn('Total users registered:', totaluser_text)
 
         # Check User Loging in
+        # find element 'link'  = login_click var
         login_click = self.browser.find_element_by_link_text('Log in')
+        # click the login_click
         login_click.click()
 
+        #check if browser title is empty as it should
         self.assertIn('', self.browser.title)
+        # find element 'h1'  = header_text var
         header_text = self.browser.find_element_by_tag_name('h1').text
+        # check if 'GradeGuide' is in header_text var
         self.assertIn('GradeGuide', header_text)
 
         # Check HomePage, Sign Up and Log in Link
+        # find element 'link'  = homepage_link var
+        # check if 'Home page' is in homepage_link var
         homepage_link = self.browser.find_element_by_link_text('Home page').text
         self.assertIn('Home page', homepage_link)
 
+        # find element 'link'  = signup_link var
+        # check if 'Sign up' is in signup_link var
         signup_link = self.browser.find_element_by_link_text('Sign up').text
         self.assertIn('Sign up', signup_link)
 
+        # find element 'link'  = login_link var
+        # check if 'Log in' is in login_link var
         login_link = self.browser.find_element_by_link_text('Log in').text
         self.assertIn('Log in', login_link)
 
+        # find element 'h2'  = login_h2 var
+        # check if 'Log in' is in login_h2 var
         login_h2 = self.browser.find_element_by_tag_name('h2').text
         self.assertIn('Log in', login_h2)
+
         # check Label Username:
+        # find element 'label@for'  = username_label var
+        # check if 'Log in' is in login_h2 var
         username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
         self.assertIn('Username:', username_label)
         # check Label Input Box
@@ -156,31 +118,9 @@ class NewVisitorTest(unittest.TestCase):
             login_button.get_attribute('type'),
             'submit'
         )
-        #END BASIC TEST
-        error_message = self.browser.find_element_by_tag_name('ul').text
-        self.assertIn('Please enter a correct username and password. Note that both fields may be case-sensitive.',
-                      error_message)
 
-        time.sleep(20)
-        self.assertIn('', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('GradeGuide', header_text)
-
-        # Check HomePage, Sign Up and Log in Link
-        homepage_link = self.browser.find_element_by_link_text('Home page').text
-        self.assertIn('Home page', homepage_link)
-
-        signup_link = self.browser.find_element_by_link_text('Sign up').text
-        self.assertIn('Sign up', signup_link)
-
-        login_link = self.browser.find_element_by_link_text('Log in').text
-        self.assertIn('Log in', login_link)
-
-        error_message = self.browser.find_elements_by_xpath("//ul[@class='errorlist nonfield']").text
-        self.assertIn('Please enter a correct username and password. Note that both fields may be case-sensitive.', error_message)
-
-    def test_login_pass(self):
-        #basic test
+    def test_login_fail(self):
+        # BASIC TEST
         self.browser.get('http://localhost:8000')
         '''Test Only Index'''
         # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
@@ -250,7 +190,102 @@ class NewVisitorTest(unittest.TestCase):
             login_button.get_attribute('type'),
             'submit'
         )
-        #end basic test
+        # END BASIC TEST
+        error_message = self.browser.find_element_by_tag_name('ul').text
+        self.assertIn('Please enter a correct username and password. Note that both fields may be case-sensitive.',
+                      error_message)
+
+        time.sleep(20)
+        self.assertIn('', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('GradeGuide', header_text)
+
+        # Check HomePage, Sign Up and Log in Link
+        homepage_link = self.browser.find_element_by_link_text('Home page').text
+        self.assertIn('Home page', homepage_link)
+
+        signup_link = self.browser.find_element_by_link_text('Sign up').text
+        self.assertIn('Sign up', signup_link)
+
+        login_link = self.browser.find_element_by_link_text('Log in').text
+        self.assertIn('Log in', login_link)
+
+        error_message = self.browser.find_elements_by_xpath("//ul[@class='errorlist nonfield']").text
+        self.assertIn('Please enter a correct username and password. Note that both fields may be case-sensitive.',
+                      error_message)
+
+    def test_login_pass(self):
+        # basic test
+        self.browser.get('http://localhost:8000')
+        '''Test Only Index'''
+        # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
+        # She notices the page title and header mention to-do lists
+        self.assertIn('', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('GradeGuide', header_text)
+
+        # Check HomePage, Sign Up and Log in Link
+        homepage_link = self.browser.find_element_by_link_text('Home page').text
+        self.assertIn('Home page', homepage_link)
+
+        signup_link = self.browser.find_element_by_link_text('Sign up').text
+        self.assertIn('Sign up', signup_link)
+
+        login_link = self.browser.find_element_by_link_text('Log in').text
+        self.assertIn('Log in', login_link)
+
+        welcome_text = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('Welcome to GradeGuide !', welcome_text)
+
+        totaluser_text = self.browser.find_element_by_tag_name('p').text
+        self.assertIn('Total users registered:', totaluser_text)
+
+        # Check User Loging in
+        login_click = self.browser.find_element_by_link_text('Log in')
+        login_click.click()
+
+        self.assertIn('', self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('GradeGuide', header_text)
+
+        # Check HomePage, Sign Up and Log in Link
+        homepage_link = self.browser.find_element_by_link_text('Home page').text
+        self.assertIn('Home page', homepage_link)
+
+        signup_link = self.browser.find_element_by_link_text('Sign up').text
+        self.assertIn('Sign up', signup_link)
+
+        login_link = self.browser.find_element_by_link_text('Log in').text
+        self.assertIn('Log in', login_link)
+
+        login_h2 = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('Log in', login_h2)
+        # check Label Username:
+        username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
+        self.assertIn('Username:', username_label)
+        # check Label Input Box
+        username_box = self.browser.find_element_by_id("id_username")
+        self.assertEqual(
+            username_box.get_attribute('type'),
+            'text'
+        )
+        # check Label Password:
+        password_label = self.browser.find_element_by_xpath("//label[@for='id_password']").text
+        self.assertIn('Password:', password_label)
+        # check Label Input Pasword Box
+        password_box = self.browser.find_element_by_id("id_password")
+        self.assertEqual(
+            password_box.get_attribute('type'),
+            'password'
+        )
+
+        # check button
+        login_button = self.browser.find_element_by_tag_name("button")
+        self.assertEqual(
+            login_button.get_attribute('type'),
+            'submit'
+        )
+        # end basic test
 
         # Check Type Username Pass RIGHT !
         username_box.send_keys('jesselingard')
@@ -293,7 +328,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # เธอเห็นประโยคที่อยู่ก่อนหน้าปุ่ม subjects
         defination = self.browser.find_element_by_tag_name('p1').text
-        self.assertEqual("If you can't remember the subject's name , The Subjects button will help you. :)",defination)
+        self.assertEqual("If you can't remember the subject's name , The Subjects button will help you. :)", defination)
 
         # test subjects button
         # เธอจำชื่อวิชาไม่ได้
@@ -341,15 +376,17 @@ class NewVisitorTest(unittest.TestCase):
         # test search result
         # เธอเห็นผลของการ search ของเธอ หลังจากที่กดปุ่ม search ไป
         result_search = self.browser.find_element_by_tag_name('p2').text
-        self.assertEqual("Semister2 : Algorithms and Data Structures\nSemister5 : Operating Systems",result_search)
+        self.assertEqual("Semister2 : Algorithms and Data Structures\nSemister5 : Operating Systems", result_search)
 
         # test Note
         # เธอเห็นประโยคด้านล่างเกี่ยวกับวิชาเลือก
         note = self.browser.find_element_by_tag_name('p3').text
-        self.assertEqual("Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.", note)
+        self.assertEqual(
+            "Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.",
+            note)
 
         self.fail('Finish the test!')
-        
+
     def test_flow_pic(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
@@ -371,6 +408,7 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(10)
 
         self.fail('Finish the test!')
+
     def test_home(self):
         # เมื่อเขากดเข้าไปที่หน้า signup
         self.browser.get('http://localhost:8000/signup')
@@ -428,6 +466,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Normal State', submit_text)
 
         self.fail('Finish the test!')
+
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
