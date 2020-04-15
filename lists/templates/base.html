@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Use layout.html on top -->
 {% extends 'layout.html' %}
 {% block content %}
 <head>
@@ -7,11 +8,17 @@
     {% block title %}{% endblock %}
 </head>
 <body>
+    <!-- Create header -->
     <h1>GradeGuide</h1>
+        <!-- url home link -->
         <a href="{% url 'home' %}">Home page</a> /
+    <!-- if user is log in then -->
     {% if user.is_authenticated %}
+        <!-- show logout link -->
         <a href="{% url 'logout' %}">Log out</a>
+    <!-- else -->
     {% else %}
+        <!-- show signup and log in link instead -->
         <a href="{% url 'signup' %}">Sign up</a> /
         <a href="{% url 'login' %}">Log in</a> /
     {% endif %}

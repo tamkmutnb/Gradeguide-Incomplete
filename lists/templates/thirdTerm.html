@@ -1,18 +1,21 @@
+<!-- Use base.html on top -->
 {% extends 'base.html' %} {% block content %}
 
 
 <hr>
-
+<!-- create align as center for TERM8 -->
 <h2 align="center">TERM 3</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+    <!-- show itemlist in dataterm8 -->
     {% for itemlist in dataterm3 %}
   <tbody>
     <tr>
@@ -24,9 +27,12 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- create header -->
 <h3>GPA :
+  <!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   {{listGPA.GPA_3}}
 {% endfor %}</h3>
+<!-- create header and show user GPAX -->
 <h3>Your GPAX : {{res_GPAX}}<h3>
 {% endblock %}

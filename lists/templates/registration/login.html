@@ -1,6 +1,9 @@
+<!-- Use base.html on top -->
 {% extends 'base.html' %} {% block content %}
-
+<!-- Create Log in header -->
 <h2>Log in</h2>
+<!-- Use log in form from django -->
+<!-- Submit by button log in -->
 <form method="post">
     {% csrf_token %}
     {{ form.as_p}}

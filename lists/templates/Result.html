@@ -1,16 +1,20 @@
+<!-- Use base.html on top -->
 {% extends 'base.html' %} {% block content %}
 
 <hr>
+<!-- set align for term -->
 <h2 align="center">TERM 1</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+    <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm1 %}
   <tbody>
     <tr>
@@ -22,6 +26,7 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>GPA : {{listGPA.GPA_1}}</h3>
 {% endfor %}
@@ -29,17 +34,19 @@
 <hr>
 
 
-
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 2</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm2 %}
   <tbody>
     <tr>
@@ -51,22 +58,25 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>GPA : {{listGPA.GPA_2}}</h3>
 {% endfor %}
 <br>
 <hr>
-
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 3</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm3 %}
   <tbody>
     <tr>
@@ -78,22 +88,25 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>GPA : {{listGPA.GPA_3}}</h3>
 {% endfor %}
 <br>
 <hr>
-
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 4</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm4 %}
   <tbody>
     <tr>
@@ -106,22 +119,26 @@
   </tbody>
 </table>
 <h3>GPA : </h3>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>{{listGPA.GPA_4}}</h3>
 {% endfor %}
 
 <br>
 <hr>
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 5</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm5 %}
   <tbody>
     <tr>
@@ -133,23 +150,27 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- create header -->
 <h3>GPA : </h3>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>{{listGPA.GPA_5}}</h3>
 {% endfor %}
 <br>
 <hr>
-
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 6</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm6 %}
   <tbody>
     <tr>
@@ -161,22 +182,27 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- create header -->
 <h3>GPA : </h3>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>{{listGPA.GPA_6}}</h3>
 {% endfor %}
 <br>
 <hr>
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 7</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm7 %}
   <tbody>
     <tr>
@@ -188,22 +214,27 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- create header -->
 <h3>GPA : </h3>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>{{listGPA.GPA_7}}</h3>
 {% endfor %}
 <br>
 <hr>
+<!-- create align as center for TERM -->
 <h2 align="center">TERM 8</h2>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <!-- Create table containing (No., Subject, Unit, Grade) each column -->
       <th scope="col">No.</th>
       <th scope="col">Subject</th>
       <th scope="col">Unit</th>
       <th scope="col">Grade</th>
     </tr>
   </thead>
+  <!-- show itemlist in dataterm -->
     {% for itemlist in dataterm8 %}
   <tbody>
     <tr>
@@ -215,7 +246,9 @@
   {% endfor %}
   </tbody>
 </table>
+<!-- create header -->
 <h3>GPA : </h3>
+<!-- Show listGPA in GPARES -->
 {% for listGPA in GPARES %}
   <h3>{{listGPA.GPA_8}}</h3>
 {% endfor %}
