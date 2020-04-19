@@ -34,7 +34,7 @@ def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         # if form is correct create new user
-        # save all user data
+        # save all user data and auto login
         # else return to signup page
         if form.is_valid():
             user = form.save()
