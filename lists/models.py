@@ -37,6 +37,9 @@ class Userinfo(models.Model):
 
 class Term1(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -45,6 +48,9 @@ class Term1(models.Model):
 
 class Term2(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -53,6 +59,9 @@ class Term2(models.Model):
 
 class Term3(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -61,6 +70,9 @@ class Term3(models.Model):
 
 class Term4(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -69,6 +81,9 @@ class Term4(models.Model):
 
 class Term5(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -77,6 +92,9 @@ class Term5(models.Model):
 
 class Term6(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -85,6 +103,9 @@ class Term6(models.Model):
 
 class Term7(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -93,6 +114,9 @@ class Term7(models.Model):
 
 class Term8(models.Model):
     # collect term data by collecting (subject name, unit, grade and GPA)
+    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
+    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
+    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -101,6 +125,7 @@ class Term8(models.Model):
 
 # for GPA we will collect GPA from each term (1-8)
 class GPA(models.Model):
+    # สร้างโมเดลสำหรับเก็บ GPA ของ user ในแต่ละเทอมโดยเป็น CharField และมีความยาวสูงสุด 255 ตัวอักษร
     GPA_1 = models.CharField(max_length=255)
     GPA_2 = models.CharField(max_length=255)
     GPA_3 = models.CharField(max_length=255)
