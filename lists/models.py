@@ -3,9 +3,9 @@ from django.db import models
 
 
 class Userinfo(models.Model):
-    # objects = None
+
     # new repo for incomplete
-    objects = None
+    
     # create model name as TextField to collect user name
     name = models.TextField(max_length=200, blank=True)
 
@@ -36,6 +36,7 @@ class Userinfo(models.Model):
 
 
 class Term1(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -43,6 +44,7 @@ class Term1(models.Model):
 
 
 class Term2(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -50,6 +52,7 @@ class Term2(models.Model):
 
 
 class Term3(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -57,6 +60,7 @@ class Term3(models.Model):
 
 
 class Term4(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -64,6 +68,7 @@ class Term4(models.Model):
 
 
 class Term5(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -71,6 +76,7 @@ class Term5(models.Model):
 
 
 class Term6(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -78,6 +84,7 @@ class Term6(models.Model):
 
 
 class Term7(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -85,6 +92,7 @@ class Term7(models.Model):
 
 
 class Term8(models.Model):
+    # collect term data by collecting (subject name, unit, grade and GPA)
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
