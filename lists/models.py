@@ -43,6 +43,11 @@ class Term1(models.Model):
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
 
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
+
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -56,6 +61,11 @@ class Term2(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -69,6 +79,11 @@ class Term3(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -82,6 +97,11 @@ class Term4(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -95,6 +115,11 @@ class Term5(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -108,6 +133,11 @@ class Term6(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -121,6 +151,11 @@ class Term7(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -134,6 +169,11 @@ class Term8(models.Model):
     # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
     # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
     # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -143,6 +183,11 @@ class Term8(models.Model):
 # for GPA we will collect GPA from each term (1-8)
 class GPA(models.Model):
     # สร้างโมเดลสำหรับเก็บ GPA ของ user ในแต่ละเทอมโดยเป็น CharField และมีความยาวสูงสุด 255 ตัวอักษร
+
+    # นำข้อมูลที่ User กรกอกและโปรแกรมคำนวณให้ มาแสดงในหน้า Result ของแต่ละ term ที่ user เลือก
+    # โดยแสดงเป็น (subject, unit, grade, GPA และที่เพิ่มเข้ามาคือการคำนวณ GPAX และนำมาแสดง)
+
+    # หน้ากราฟเช่นกันจะนำ User กรกอกและโปรแกรมคำนวณให้ มาแสดงกราฟในหน้า Graph
     GPA_1 = models.CharField(max_length=255)
     GPA_2 = models.CharField(max_length=255)
     GPA_3 = models.CharField(max_length=255)
