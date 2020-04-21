@@ -36,10 +36,13 @@ class Userinfo(models.Model):
 
 
 class Term1(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
+
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -47,10 +50,12 @@ class Term1(models.Model):
 
 
 class Term2(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -58,10 +63,12 @@ class Term2(models.Model):
 
 
 class Term3(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -69,10 +76,12 @@ class Term3(models.Model):
 
 
 class Term4(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -80,10 +89,12 @@ class Term4(models.Model):
 
 
 class Term5(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -91,10 +102,12 @@ class Term5(models.Model):
 
 
 class Term6(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -102,10 +115,12 @@ class Term6(models.Model):
 
 
 class Term7(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
@@ -113,10 +128,12 @@ class Term7(models.Model):
 
 
 class Term8(models.Model):
-    # collect term data by collecting (subject name, unit, grade and GPA)
-    # เมื่อ user กรอกข้อมูล ใน term กรอก วิชา
-    # subject, unit=3, grade=A เราจะมี model สำหรับเก็บข้อมูลดังกล่าวโดยสร้างไว้เป็น CharField มาก่อน
-    # ที่ความยาวสูงสุดคือ 255 ตัวอักษร และจะทำการบันทึกเก็บเข้าไปในตัว model
+    # example model จะถูกนำไปใช้งานใน views.py
+    # อย่างใน function การคำนวณเกรด
+    # 1 เราจะเช็คว่า objects ใน term นั้นต้อง ไม่เกิน 9 ตัว
+    # 2 จากนั้นทำการเช็คว่า objects ใน term นั้นมีความยาวเท่ากับ 0 หรือไม่
+    # 2.1 หากใช่ให้ทำการสร้าง objects ใน term 9 ตัวโดยแต่ละตัวจะ เก็บ (subject, unit, grade และ GPA)
+    # 2.2 หากไม่ให้ทำการอัพเดท ข้อมูลที่มีอยู่ให้เป็นข้อมูลใหม่ที่ user กรอกเข้ามานั่นเอง
     subject = models.CharField(max_length=255)
     unit = models.CharField(max_length=255)
     Grade = models.CharField(max_length=255)
