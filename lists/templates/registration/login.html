@@ -4,9 +4,9 @@
 <h2>Log in</h2>
 <!-- Use log in form from django -->
 <!-- Submit by button log in -->
-<form method="post">
+<form method="post" id="login_form">
     {% csrf_token %}
     {{ form.as_p}}
-    <button type="submit" class="btn btn-primary">Log in</button>
+    <button name="login_button_name" type="submit" class="btn btn-primary">Log in</button>
 </form>
 {% endblock %}
