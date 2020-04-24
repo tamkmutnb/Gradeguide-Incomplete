@@ -23,7 +23,7 @@ class NewVisitorTest(unittest.TestCase):
         '''Test Only Index'''
         # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
         # She notices the page title and header mention to-do lists
-        self.assertIn('', self.browser.title)
+        self.assertIn('GradeGuide', self.browser.title)
         # ! find element 'h1' as text = header_text var
         # ! header_text = self.browser.find_element_by_tag_name('h1').text
         # find element 'link' as text
@@ -76,6 +76,7 @@ class NewVisitorTest(unittest.TestCase):
         login_link = self.browser.find_element_by_partial_link_text('LOGIN')
         # check if 'LOGIN' is in signup_link var
         login_link.click()
+        self.assertIn('GradeGuide', self.browser.title)
         time.sleep(2)
 
         #check if browser title is empty as it should
