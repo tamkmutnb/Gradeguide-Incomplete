@@ -76,7 +76,7 @@ class NewVisitorTest(unittest.TestCase):
         login_link = self.browser.find_element_by_partial_link_text('LOGIN')
         # check if 'LOGIN' is in signup_link var
         login_link.click()
-        self.assertIn('GradeGuide', self.browser.title)
+        self.assertIn('Login_Page', self.browser.title)
         time.sleep(2)
 
         #check if browser title is empty as it should
@@ -145,7 +145,7 @@ class NewVisitorTest(unittest.TestCase):
         '''Test Only Index'''
         # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
         # She notices the page title and header mention to-do lists
-        self.assertIn('', self.browser.title)
+        self.assertIn('GradeGuide', self.browser.title)
 
         # find element 'link' as text
         header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
@@ -188,6 +188,7 @@ class NewVisitorTest(unittest.TestCase):
         login_link = self.browser.find_element_by_partial_link_text('LOGIN')
         # check if 'LOGIN' is in signup_link var
         login_link.click()
+        self.assertIn('Login_Page', self.browser.title)
         time.sleep(2)
 
         username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
@@ -250,7 +251,7 @@ class NewVisitorTest(unittest.TestCase):
         '''Test Only Index'''
         # เขาสังเกตุว่าชื่อเว็บจะมีคำว่า grade guide
         # She notices the page title and header mention to-do lists
-        self.assertIn('', self.browser.title)
+        self.assertIn('GradeGuide', self.browser.title)
 
         # find element 'link' as text
         header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
@@ -347,12 +348,14 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(2)
 
         # Check Redirect !!!!!
+        ''' will add home_page element test later'''
         broswer_title = self.browser.title
         self.assertIn('Home', broswer_title)
 
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
+        self.assertIn('Flow', self.browser.title)
         time.sleep(5)
 
         # test Flow H1 text
@@ -384,7 +387,7 @@ class NewVisitorTest(unittest.TestCase):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
 
-        self.assertIn('', self.browser.title)
+        self.assertIn('Flow', self.browser.title)
 
         # test search box
         # เธอเห็นช่องสำหรับใส่ชื่อวิชาเพื่อค้นหาวิชาที่เป็นตัวต่อกัน
@@ -447,6 +450,7 @@ class NewVisitorTest(unittest.TestCase):
         # go to flow page
         # wait for 5s
         self.browser.get('http://localhost:8000/flow.html')
+        self.assertIn('Flow', self.browser.title)
         time.sleep(5)
 
         # test fullflow button
@@ -477,6 +481,7 @@ class NewVisitorTest(unittest.TestCase):
         # เมื่อเขากดเข้าไปที่หน้า signup
         # go to signup page
         self.browser.get('http://localhost:8000/signup')
+        self.assertIn('Signup_Page', self.browser.title)
 
         # find element 'id'  = username_box var
         # find element 'id'  = password_box var
