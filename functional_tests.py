@@ -545,6 +545,7 @@ class NewVisitorTest(unittest.TestCase):
         # find element 'h4'  = id_user var
         # check if 'jesselingard' is in id_user var
         self.browser.get('http://127.0.0.1:8000/home')
+        self.assertIn('Home', header_text)
         id_user = self.browser.find_element_by_tag_name('h4').text
         self.assertIn('jesselingard', id_user)
 
@@ -554,7 +555,7 @@ class NewVisitorTest(unittest.TestCase):
         unit_text = self.browser.find_element_by_id('subject1Unitid')
         unit_text.send_keys('Unit: 1')
 
-        # เขาใส่ Grade
+        '''*should add grade input for all 8 in term'''
         # find element 'id'  = unit_text var
         # unit_text input
         # wait for 3s
