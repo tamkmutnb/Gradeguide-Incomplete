@@ -15,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     # test index Page
-    def test_index(self):
+    def test_can_check_index_page_element(self):
         # เอิร์ธได้ยินมาว่ามีเว็บในการคำนวณเกรดและอยากจะใช้งาน
         # จึงเข้าเว็บไปที่หน้า Homepage
 
@@ -27,9 +27,9 @@ class NewVisitorTest(unittest.TestCase):
         # ! find element 'h1' as text = header_text var
         # ! header_text = self.browser.find_element_by_tag_name('h1').text
         # find element 'link' as text
-        header_link = self.browser.find_element_by_link_text('GRADGUIDE').text
+        header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
         # check if 'GradeGuide' is in header_text var
-        self.assertIn('GRADGUIDE', header_link)
+        self.assertIn('GRADEGUIDE', header_link)
 
         # Check HomePage, Sign Up and Log in Link
 
@@ -68,6 +68,7 @@ class NewVisitorTest(unittest.TestCase):
         totaluser_text = self.browser.find_element_by_tag_name('p').text
         # check if 'Total users registered:' is in totaluser_text var
         self.assertIn('Total users registered:', totaluser_text)
+        time.sleep(5)
 
         # Check User Loging in
         # find element 'link'  = login_click var
@@ -81,9 +82,9 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('', self.browser.title)
 
         # find element 'link' as text
-        header_link = self.browser.find_element_by_link_text('GRADGUIDE').text
+        header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
         # check if 'GradeGuide' is in header_text var
-        self.assertIn('GRADGUIDE', header_link)
+        self.assertIn('GRADEGUIDE', header_link)
 
         # Check HomePage, Sign Up and Log in Link
 
@@ -137,7 +138,7 @@ class NewVisitorTest(unittest.TestCase):
             'password'
         )
 
-    def test_login_fail(self):
+    def test_can_check_wrong_userlogin_errormessage(self):
         # BASIC TEST
         self.browser.get('http://localhost:8000')
         '''Test Only Index'''
@@ -146,9 +147,9 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('', self.browser.title)
 
         # find element 'link' as text
-        header_link = self.browser.find_element_by_link_text('GRADGUIDE').text
+        header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
         # check if 'GradeGuide' is in header_text var
-        self.assertIn('GRADGUIDE', header_link)
+        self.assertIn('GRADEGUIDE', header_link)
 
         # Check HomePage, Sign Up and Log in Link
 
@@ -242,7 +243,7 @@ class NewVisitorTest(unittest.TestCase):
                       error_message)
         time.sleep(2)
 
-    def test_login_pass(self):
+    def test_can_check_correct_userlogin(self):
         # BASIC TEST
         self.browser.get('http://localhost:8000')
         '''Test Only Index'''
@@ -251,9 +252,9 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('', self.browser.title)
 
         # find element 'link' as text
-        header_link = self.browser.find_element_by_link_text('GRADGUIDE').text
+        header_link = self.browser.find_element_by_link_text('GRADEGUIDE').text
         # check if 'GradeGuide' is in header_text var
-        self.assertIn('GRADGUIDE', header_link)
+        self.assertIn('GRADEGUIDE', header_link)
 
         # Check HomePage, Sign Up and Log in Link
 
@@ -348,7 +349,7 @@ class NewVisitorTest(unittest.TestCase):
         broswer_title = self.browser.title
         self.assertIn('Home', broswer_title)
 
-    def test_subjects_button_flow(self):
+    def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
         time.sleep(5)
@@ -378,7 +379,7 @@ class NewVisitorTest(unittest.TestCase):
         # test finish text
         #self.fail('Finish the test!')
 
-    def test_search_flow(self):
+    def test_can_check_search_fucntion_and_button(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
 
@@ -440,7 +441,7 @@ class NewVisitorTest(unittest.TestCase):
         # finish test text
         #self.fail('Finish the test!')
 
-    def test_flow_pic(self):
+    def test_can_recieve_userinput_and_return_flow_image(self):
         # เธอคลิกเข้ามาที่ link flow
         # go to flow page
         # wait for 5s
@@ -501,8 +502,8 @@ class NewVisitorTest(unittest.TestCase):
         # find element 'id'  = signup_button var
         # click signup_button
         # wait for 2s
-        signup_button = self.browser.find_element_by_tag_name("button")
-        signup_button.click()
+        #signup_button = self.browser.find_element_by_tag_name("button")
+        #signup_button.click()
         time.sleep(2)
 
         # เขาเข้าไปที่หน้า login
