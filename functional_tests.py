@@ -1,6 +1,7 @@
 # import selenium webdriver, time and unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 import time
 import unittest
 
@@ -79,7 +80,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Login_Page', self.browser.title)
         time.sleep(2)
 
-        #check if browser title is empty as it should
+        # check if browser title is empty as it should
         self.assertIn('', self.browser.title)
 
         # find element 'link' as text
@@ -234,9 +235,9 @@ class NewVisitorTest(unittest.TestCase):
         password_box.send_keys('wrongpsw')
         time.sleep(2)
         login_buttonnew = self.browser.find_element_by_name('login_button_name')
-        #login_class = self.browser.find_element_by_xpath("//button[@type='submit']")
+        # login_class = self.browser.find_element_by_xpath("//button[@type='submit']")
         login_buttonnew.click()
-        #login_class.click()
+        # login_class.click()
         time.sleep(2)
         # find element 'ul'  = error_message var
         # check if 'following text' is in error_message var
@@ -338,20 +339,157 @@ class NewVisitorTest(unittest.TestCase):
         # User input username
         # User in put password
         username_box.send_keys('tamtong007')
-        time.sleep(2)
+        # time.sleep(2)
         password_box.send_keys('O87525o135@')
-        time.sleep(2)
+        # time.sleep(2)
         login_buttonnew = self.browser.find_element_by_name('login_button_name')
         # login_class = self.browser.find_element_by_xpath("//button[@type='submit']")
         login_buttonnew.click()
         # login_class.click()
-        time.sleep(2)
+        # time.sleep(2)
 
         # Check Redirect !!!!!
         ''' will add home_page element test later'''
         broswer_title = self.browser.title
         self.assertIn('Home', broswer_title)
 
+        # check if username shown is right
+        id_user = self.browser.find_element_by_tag_name('h4').text
+        self.assertIn('tamtong007', id_user)
+
+        subject_dropdown = self.browser.find_element_by_name('subjectTerm').text
+        self.assertIn('Term: 1\nTerm: 2\nTerm: 3\nTerm: 4\nTerm: 5\nTerm: 6\nTerm: 7\nTerm: 8', subject_dropdown)
+        # time.sleep(2)
+
+        # subject_dropdown.Select('Term: 1')
+        # time.sleep(2)
+
+        dropdown_click = self.browser.find_element_by_id('subjectTermid')
+        dropdown_click.click()
+        # time.sleep(2)
+
+        # select = Select(driver.find_element_by_xpath("//select[@name='name']"))
+        # all_selected_options = select.all_selected_options
+
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        term1_selected_options = select_term.select_by_value('1')
+        # time.sleep(2)
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        '''
+        Check  of subject 1
+        -1 table number
+        -2 subject input box
+        -3 unit value
+        -4 grade value
+        -
+         '''
+        for i in range(1, 10, 1):
+            subject_table_num = self.browser.find_element_by_id("table_number_" + str(i)).text
+            table_num = self.browser.find_element_by_id("table_number_" + str(i)).text
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name').text
+            self.assertIn(str(i), subject_table_num)
+            self.assertIn(str(i), table_num)
+            self.assertIn('', subject_input_box)
+            for j in range(1, 10, 1):
+                if (j <= 5):
+                    subject_unit = self.browser.find_element_by_xpath(
+                        '//select[@id='+"'subject" + str(i) + "Unitid']/option[" + str(j) + ']').text
+
+                subject_grade = self.browser.find_element_by_xpath('//select[@id='+"'subject" + str(i) + "Gradeid']/option["+str(j)+ ']').text
+
+                if (j == 1):
+                    self.assertIn('', subject_unit)
+                    self.assertIn('', subject_grade)
+                if (j == 2):
+                    self.assertIn('Unit: 1', subject_unit)
+                    self.assertIn('  Grade: 4  (A)', subject_grade)
+                if (j == 3):
+                    self.assertIn('Unit: 2', subject_unit)
+                    self.assertIn('Grade: 3.5 (B+)', subject_grade)
+                if (j == 4):
+                    self.assertIn('Unit: 3', subject_unit)
+                    self.assertIn(' Grade: 3  (B)', subject_grade)
+                if (j == 5):
+                    self.assertIn('Unit: 4', subject_unit)
+                    self.assertIn('Grade: 2.5  (C+)', subject_grade)
+                if (j == 6):
+                    self.assertIn(' Grade: 2  (C)', subject_grade)
+                if (j == 7):
+                    self.assertIn('Grade: 1.5  (D+)', subject_grade)
+                if (j == 8):
+                    self.assertIn('  Grade: 1  (D)', subject_grade)
+                if (j == 9):
+                    self.assertIn('Grade: 0  (F)', subject_grade)
+
+
+                '''
+                # 1 check table nuber
+                subject1_table_number = self.browser.find_element_by_id("table_number_1").text
+                self.assertIn('1', subject1_table_number)
+                # time.sleep(2)
+
+                # 2 subject input box
+                subject1_subject_input_box = self.browser.find_element_by_name('subject1name').text
+                self.assertIn('', subject1_subject_input_box)
+
+                # 3 unit value
+                subject1_unit_0 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[1]").text
+                self.assertIn('', subject1_unit_0)
+
+                subject1_unit_1 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[2]").text
+                self.assertIn('Unit: 1', subject1_unit_1)
+
+                subject1_unit_2 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[3]").text
+                self.assertIn('Unit: 2', subject1_unit_2)
+
+                subject1_unit_3 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[4]").text
+                self.assertIn('Unit: 3', subject1_unit_3)
+
+                subject1_unit_4 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[5]").text
+                self.assertIn('Unit: 4', subject1_unit_4)
+
+                # 4 grade value
+                subject1_grade_0 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[1]").text
+                self.assertIn('', subject1_grade_0)
+
+                subject1_grade_1 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[2]").text
+                self.assertIn('  Grade: 4  (A)', subject1_grade_1)
+
+                subject1_grade_2 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[3]").text
+                self.assertIn('Grade: 3.5 (B+)', subject1_grade_2)
+
+                subject1_grade_3 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[4]").text
+                self.assertIn(' Grade: 3  (B)', subject1_grade_3)
+
+                subject1_grade_4 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[5]").text
+                self.assertIn('Grade: 2.5  (C+)', subject1_grade_4)
+
+                subject1_grade_5 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[6]").text
+                self.assertIn('Grade: 2  (C)', subject1_grade_5)
+
+                subject1_grade_6 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[7]").text
+                self.assertIn('Grade: 1.5  (D+)', subject1_grade_6)
+
+                subject1_grade_7 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[8]").text
+                self.assertIn('  Grade: 1  (D)', subject1_grade_7)
+
+                subject1_grade_8 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[9]").text
+                self.assertIn('Grade: 0  (F)', subject1_grade_8)
+                '''
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
@@ -381,7 +519,7 @@ class NewVisitorTest(unittest.TestCase):
         # wait for 5s
         time.sleep(5)
         # test finish text
-        #self.fail('Finish the test!')
+        # self.fail('Finish the test!')
 
     def test_can_check_search_fucntion_and_button(self):
         # เธอคลิกเข้ามาที่ link flow
@@ -443,7 +581,7 @@ class NewVisitorTest(unittest.TestCase):
             "Note : Elective Subjects don't connect to each other but I want to show how many elective subjects are in this flow.",
             note)
         # finish test text
-        #self.fail('Finish the test!')
+        # self.fail('Finish the test!')
 
     def test_can_recieve_userinput_and_return_flow_image(self):
         # เธอคลิกเข้ามาที่ link flow
@@ -464,8 +602,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # test can find the flow picture
         # เธอเห็นภาพวิชาตัวต่อทั้งหมด
-        # find element 'id'  = flow_image var
-        # check if 'image' is equal to flow_image.attribute var
+        # check image id of stat picture and image in picFlow.html
         # wait for 10s
         flow_image = self.browser.find_element_by_id("image")
         self.assertEqual(
@@ -475,9 +612,9 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(10)
 
         # finish test text
-        #self.fail('Finish the test!')
+        # self.fail('Finish the test!')
 
-    def test_home(self):
+    def grade_calculator_check_element(self):
         # เมื่อเขากดเข้าไปที่หน้า signup
         # go to signup page
         self.browser.get('http://localhost:8000/signup')
@@ -508,8 +645,8 @@ class NewVisitorTest(unittest.TestCase):
         # find element 'id'  = signup_button var
         # click signup_button
         # wait for 2s
-        #signup_button = self.browser.find_element_by_tag_name("button")
-        #signup_button.click()
+        # signup_button = self.browser.find_element_by_tag_name("button")
+        # signup_button.click()
         time.sleep(2)
 
         # เขาเข้าไปที่หน้า login
@@ -581,7 +718,113 @@ class NewVisitorTest(unittest.TestCase):
         # check if 'Normal ' is in submit_text var
         self.assertIn('Normal State', submit_text)
         # finish test
-        #self.fail('Finish the test!')
+        # self.fail('Finish the test!')
+
+    def test_home(self):
+        # เมื่อเขากดเข้าไปที่หน้า signup
+        # go to signup page
+        self.browser.get('http://localhost:8000/signup')
+        self.assertIn('Signup_Page', self.browser.title)
+
+        # find element 'id'  = username_box var
+        # find element 'id'  = password_box var
+        # find element 'id'  = password_box2 var
+
+        username_box = self.browser.find_element_by_id("id_username")
+
+        password_box = self.browser.find_element_by_id("id_password1")
+
+        password_box2 = self.browser.find_element_by_id("id_password2")
+
+        # เขาทำการสมัคร username jesselingard
+        # password lingard123456789
+        # password2 lingard123456789
+
+        # username_box input
+        # password_box input
+        # password_box2 input
+        username_box.send_keys('jesselingard')
+        password_box.send_keys('lingard123456789')
+        password_box2.send_keys('lingard123456789')
+
+        # เขาทำการกดปุ่ม signup
+        # find element 'id'  = signup_button var
+        # click signup_button
+        # wait for 2s
+        # signup_button = self.browser.find_element_by_tag_name("button")
+        # signup_button.click()
+        time.sleep(2)
+
+        # เขาเข้าไปที่หน้า login
+        # go to login page
+        # find element 'h2'  = header_text var
+        # check if 'Log in' is in header_text var
+        self.browser.get('http://127.0.0.1:8000/accounts/login/')
+        header_text = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('Log in', header_text)
+
+        # find element 'id'  = username_login_box var
+        # find element 'id'  = password_login_box var
+        username_login_box = self.browser.find_element_by_id("id_username")
+
+        password_login_box = self.browser.find_element_by_id("id_password")
+
+        # เขาใส่ id password
+        # username_login_box input
+        # password_login_box input
+        username_login_box.send_keys('jesselingard')
+        password_login_box.send_keys('lingard123456789')
+
+        # เขากดปุ่ม login
+        # find element 'name'  = login_button var
+        # click login_button
+        # wait for 2s
+        login_button = self.browser.find_element_by_tag_name("button")
+        login_button.click()
+        time.sleep(2)
+
+        # เขาเข้าไปที่หน้า homepage
+        # go to home page
+        # find element 'h4'  = id_user var
+        # check if 'jesselingard' is in id_user var
+        self.browser.get('http://127.0.0.1:8000/home')
+        self.assertIn('Home', header_text)
+        id_user = self.browser.find_element_by_tag_name('h4').text
+        self.assertIn('jesselingard', id_user)
+
+        # เขาใส่ unit
+        # find element 'id'  = unit_text var
+        # unit_text input
+        unit_text = self.browser.find_element_by_id('subject1Unitid')
+        unit_text.send_keys('Unit: 1')
+
+        '''*should add grade input for all 8 in term'''
+        # find element 'id'  = unit_text var
+        # unit_text input
+        # wait for 3s
+        unit_text = self.browser.find_element_by_id('subject1Gradeid')
+        unit_text.send_keys('Grade: 2.5&nbsp; (C+)')
+        time.sleep(3)
+
+        # เขาเห็นเกรดแสดงขึ้นมา
+        # find element 'id'  = submit_button var
+        # click submit_button
+        # wait for 3s
+        submit_button = self.browser.find_element_by_id("submit")
+        submit_button.click()
+        time.sleep(3)
+        # find element 'id'  = submit_text var
+        # check if '2.5' is in submit_text var
+        # wait for 6s
+        submit_text = self.browser.find_element_by_id('gradeshow').text
+        self.assertIn('2.5', submit_text)
+        time.sleep(6)
+
+        # เขาเห็นสาถานะนักศึกษาของเขา
+        # check if 'Normal ' is in submit_text var
+        self.assertIn('Normal State', submit_text)
+        # finish test
+        # self.fail('Finish the test!')
 
 
 if __name__ == '__main__':
