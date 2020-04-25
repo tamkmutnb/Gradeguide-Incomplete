@@ -390,7 +390,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Grade', table_element_4)
 
         '''
-        Check  of subject 1
+        Check  of subject (1-9)
         -1 table number
         -2 subject input box
         -3 unit value
@@ -435,61 +435,17 @@ class NewVisitorTest(unittest.TestCase):
                 if (j == 9):
                     self.assertIn('Grade: 0  (F)', subject_grade)
 
+                # Check submit and save button
+                submit_button = self.browser.find_element_by_id('submit_button').text
+                save_button = self.browser.find_element_by_id('save_button').text
+                self.assertIn('Submit', submit_button)
+                self.assertIn('', save_button)
+                # Check your gpa and student status element
+                your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+                student_status_text = self.browser.find_element_by_name('student_status_text').text
+                self.assertIn('Your GPA :', your_gpa_text)
+                self.assertIn('Student Status :', student_status_text)
 
-                '''
-                # 1 check table nuber
-                subject1_table_number = self.browser.find_element_by_id("table_number_1").text
-                self.assertIn('1', subject1_table_number)
-                # time.sleep(2)
-
-                # 2 subject input box
-                subject1_subject_input_box = self.browser.find_element_by_name('subject1name').text
-                self.assertIn('', subject1_subject_input_box)
-
-                # 3 unit value
-                subject1_unit_0 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[1]").text
-                self.assertIn('', subject1_unit_0)
-
-                subject1_unit_1 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[2]").text
-                self.assertIn('Unit: 1', subject1_unit_1)
-
-                subject1_unit_2 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[3]").text
-                self.assertIn('Unit: 2', subject1_unit_2)
-
-                subject1_unit_3 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[4]").text
-                self.assertIn('Unit: 3', subject1_unit_3)
-
-                subject1_unit_4 = self.browser.find_element_by_xpath("//select[@id='subject1Unitid']/option[5]").text
-                self.assertIn('Unit: 4', subject1_unit_4)
-
-                # 4 grade value
-                subject1_grade_0 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[1]").text
-                self.assertIn('', subject1_grade_0)
-
-                subject1_grade_1 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[2]").text
-                self.assertIn('  Grade: 4  (A)', subject1_grade_1)
-
-                subject1_grade_2 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[3]").text
-                self.assertIn('Grade: 3.5 (B+)', subject1_grade_2)
-
-                subject1_grade_3 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[4]").text
-                self.assertIn(' Grade: 3  (B)', subject1_grade_3)
-
-                subject1_grade_4 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[5]").text
-                self.assertIn('Grade: 2.5  (C+)', subject1_grade_4)
-
-                subject1_grade_5 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[6]").text
-                self.assertIn('Grade: 2  (C)', subject1_grade_5)
-
-                subject1_grade_6 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[7]").text
-                self.assertIn('Grade: 1.5  (D+)', subject1_grade_6)
-
-                subject1_grade_7 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[8]").text
-                self.assertIn('  Grade: 1  (D)', subject1_grade_7)
-
-                subject1_grade_8 = self.browser.find_element_by_xpath("//select[@id='subject1Gradeid']/option[9]").text
-                self.assertIn('Grade: 0  (F)', subject1_grade_8)
-                '''
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')

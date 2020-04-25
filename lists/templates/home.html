@@ -252,16 +252,16 @@
 </table>
         <br>
             <!-- create submit button -->
-            <button type="button" class="btn btn-primary btn-lg" onclick="Submitcal()">Submit</button>
+            <button id="submit_button" type="button" class="btn btn-primary btn-lg" onclick="Submitcal()">Submit</button>
             <!-- create save button -->
-            <input type="submit" class="btn btn-secondary btn-lg" value="Save">
+            <input id="save_button" type="submit" class="btn btn-secondary btn-lg" value="Save">
         </form>
             <!-- create error message -->
         <p><font size="5" color="B03A2E">{{message}}</font></p>
             <!-- create YOUR GPA : text -->
-        <h1><font size="6" >Your GPA  : {{result}}{{notinput}} <p" id="demo""></p></font></h1>
+        <h1 name="your_gpa_text"><font size="6" >Your GPA  : {{result}}{{notinput}} <p" id="demo""></p></font></h1>
             <!-- create Student Status : text -->
-        <h1><font size="6" >Student Status : <p" id="student_state""></font></p></h1>
+        <h1 name="student_status_text"><font size="6" >Student Status : <p" id="student_state""></font></p></h1>
         <!-- grade cal function -->
         <script>
         function Submitcal() {
