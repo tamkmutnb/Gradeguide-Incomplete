@@ -639,12 +639,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject'+str(i)+'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 2 user input'''
         # Check submit and save button
@@ -680,12 +680,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 3 user input'''
         # Check submit and save button
@@ -721,12 +721,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 4 user input'''
         # Check submit and save button
@@ -762,12 +762,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 5 user input'''
         # Check submit and save button
@@ -794,7 +794,7 @@ class NewVisitorTest(unittest.TestCase):
             # input subject name
             subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
 
-            subject_input_box.send_keys(list_subject_term5[i])
+            subject_input_box.send_keys(list_subject_term1[i])
 
             print(subject_input_box.text)
             # input subject unit
@@ -803,12 +803,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 6 user input'''
         # Check submit and save button
@@ -835,7 +835,7 @@ class NewVisitorTest(unittest.TestCase):
             # input subject name
             subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
 
-            subject_input_box.send_keys(list_subject_term6[i])
+            subject_input_box.send_keys(list_subject_term1[i])
 
             print(subject_input_box.text)
             # input subject unit
@@ -844,12 +844,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 7 user input'''
         # Check submit and save button
@@ -885,12 +885,12 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
         '''term 8 user input'''
         # Check submit and save button
@@ -926,13 +926,17 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #
         # user click submit button
         submit_click.click()
         # user click save button
         save_click.click()
-        time.sleep(2)
+        #time.sleep(2)
 
+    def test_can_check_element(self):
+        # เธอคลิกเข้ามาที่ link flow
+        self.browser.get("http://127.0.0.1:8000/r'fifthTerm'")
+        time.sleep(20)
 
 
     def test_can_check_flow_page_element(self):
