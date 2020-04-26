@@ -934,10 +934,328 @@ class NewVisitorTest(unittest.TestCase):
         #time.sleep(2)
 
     def test_can_check_element(self):
-        # เธอคลิกเข้ามาที่ link flow
-        self.browser.get("http://127.0.0.1:8000/r'fifthTerm'")
-        time.sleep(20)
+        # First term page
+        self.browser.get("http://127.0.0.1:8000/r'firstTerm'")
 
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 1', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term1_subject'+str(j), td[i].text)
+            j +=1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i)+' td of unit right now ='+td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i)+' td of grade rignt now ='+td[i].text)
+
+        '''2nd term PAGE'''
+
+        self.browser.get("http://127.0.0.1:8000/r'secondTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 2', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term2_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+
+
+        '''3rd term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/r'thirdTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 3', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term3_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+        '''4th term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/r'fourthTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 4', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term4_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+        '''5th term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/r'fifthTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 5', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term5_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+        '''6rd term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/r'sixthTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 6', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term6_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+        '''7th term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/r'seventhTerm'")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 7', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term7_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
+
+        '''8th term PAGE'''
+        self.browser.get("http://127.0.0.1:8000/eightTerm")
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        # td tag for (term_subject, unit and grade
+        td = self.browser.find_elements_by_tag_name('td')
+        # check if header is the right term
+        header = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('TERM 8', header)
+        # index for term1_subject to start with 1
+        j = 1
+        # check subject name
+        for i in range(0, 27, 3):
+            print('j before =' + str(j))
+            self.assertIn('term8_subject' + str(j), td[i].text)
+            j += 1
+            print('i =' + str(i))
+            print('j =' + str(j))
+        # check if unit is correct
+        for i in range(1, 27, 3):
+            self.assertIn('3', td[i].text)
+            print(str(i) + ' td of unit right now =' + td[i].text)
+        # check if grade is correct
+        for i in range(2, 27, 3):
+            self.assertIn('2.5', td[i].text)
+            print(str(i) + ' td of grade rignt now =' + td[i].text)
 
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow

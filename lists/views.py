@@ -701,7 +701,7 @@ def calGrade(request):
                 Term7.objects.filter(pk=5).update(subject=request.POST['subject5name'],
                                                   unit=request.POST['subject5Unit'],
                                                   Grade=request.POST['subject5Grade'], GPA=res)
-                Term6.objects.filter(pk=6).update(subject=request.POST['subject6name'],
+                Term7.objects.filter(pk=6).update(subject=request.POST['subject6name'],
                                                   unit=request.POST['subject6Unit'],
                                                   Grade=request.POST['subject6Grade'], GPA=res)
                 Term7.objects.filter(pk=7).update(subject=request.POST['subject7name'],
