@@ -777,31 +777,31 @@ def calGrade(request):
                 return render(request, 'home.html', {'result': res})
             # else update one for each subject containing (subjectname, unit, grade and GPA)
             else:
-                Term6.objects.filter(pk=1).update(subject=request.POST['subject1name'],
+                Term8.objects.filter(pk=1).update(subject=request.POST['subject1name'],
                                                   unit=request.POST['subject1Unit'],
                                                   Grade=request.POST['subject1Grade'], GPA=res)
-                Term6.objects.filter(pk=2).update(subject=request.POST['subject2name'],
+                Term8.objects.filter(pk=2).update(subject=request.POST['subject2name'],
                                                   unit=request.POST['subject2Unit'],
                                                   Grade=request.POST['subject2Grade'], GPA=res)
-                Term6.objects.filter(pk=3).update(subject=request.POST['subject3name'],
+                Term8.objects.filter(pk=3).update(subject=request.POST['subject3name'],
                                                   unit=request.POST['subject3Unit'],
                                                   Grade=request.POST['subject3Grade'], GPA=res)
-                Term6.objects.filter(pk=4).update(subject=request.POST['subject4name'],
+                Term8.objects.filter(pk=4).update(subject=request.POST['subject4name'],
                                                   unit=request.POST['subject4Unit'],
                                                   Grade=request.POST['subject4Grade'], GPA=res)
-                Term6.objects.filter(pk=5).update(subject=request.POST['subject5name'],
+                Term8.objects.filter(pk=5).update(subject=request.POST['subject5name'],
                                                   unit=request.POST['subject5Unit'],
                                                   Grade=request.POST['subject5Grade'], GPA=res)
-                Term6.objects.filter(pk=6).update(subject=request.POST['subject6name'],
+                Term8.objects.filter(pk=6).update(subject=request.POST['subject6name'],
                                                   unit=request.POST['subject6Unit'],
                                                   Grade=request.POST['subject6Grade'], GPA=res)
-                Term6.objects.filter(pk=7).update(subject=request.POST['subject7name'],
+                Term8.objects.filter(pk=7).update(subject=request.POST['subject7name'],
                                                   unit=request.POST['subject7Unit'],
                                                   Grade=request.POST['subject7Grade'], GPA=res)
-                Term6.objects.filter(pk=8).update(subject=request.POST['subject8name'],
+                Term8.objects.filter(pk=8).update(subject=request.POST['subject8name'],
                                                   unit=request.POST['subject8Unit'],
                                                   Grade=request.POST['subject8Grade'], GPA=res)
-                Term6.objects.filter(pk=9).update(subject=request.POST['subject9name'],
+                Term8.objects.filter(pk=9).update(subject=request.POST['subject9name'],
                                                   unit=request.POST['subject9Unit'],
                                                   Grade=request.POST['subject9Grade'], GPA=res)
                 GPA.objects.filter(pk=1).update(GPA_8=res)

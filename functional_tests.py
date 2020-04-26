@@ -794,7 +794,7 @@ class NewVisitorTest(unittest.TestCase):
             # input subject name
             subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
 
-            subject_input_box.send_keys(list_subject_term1[i])
+            subject_input_box.send_keys(list_subject_term5[i])
 
             print(subject_input_box.text)
             # input subject unit
@@ -835,7 +835,7 @@ class NewVisitorTest(unittest.TestCase):
             # input subject name
             subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
 
-            subject_input_box.send_keys(list_subject_term1[i])
+            subject_input_box.send_keys(list_subject_term6[i])
 
             print(subject_input_box.text)
             # input subject unit
