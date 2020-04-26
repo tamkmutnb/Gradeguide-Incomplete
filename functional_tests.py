@@ -446,6 +446,495 @@ class NewVisitorTest(unittest.TestCase):
                 self.assertIn('Your GPA :', your_gpa_text)
                 self.assertIn('Student Status :', student_status_text)
 
+    def test_can_check_user_grade_input_each_term(self):
+        self.browser.get('http://127.0.0.1:8000/accounts/login/')
+        username_label = self.browser.find_element_by_xpath("//label[@for='id_username']").text
+        self.assertIn('Username:', username_label)
+        time.sleep(2)
+
+        # check Label Input Box
+        # find element 'id'  = username_box var
+        # check if 'text' is equal to username_box.attribute var
+        username_box = self.browser.find_element_by_id("id_username")
+        self.assertEqual(
+            username_box.get_attribute('type'),
+            'text'
+        )
+
+        # check Label Password:
+        # find element 'label@for'  = password_label var
+        # check if 'Password:' is in password_label var
+        password_label = self.browser.find_element_by_xpath("//label[@for='id_password']").text
+        self.assertIn('Password:', password_label)
+
+        # check Label Input Pasword Box
+        # find element 'id'  = password_box var
+        # check if 'password' is equal to password_box.attribute var
+        password_box = self.browser.find_element_by_id("id_password")
+        self.assertEqual(
+            password_box.get_attribute('type'),
+            'password'
+        )
+
+        # check button
+        # find element 'id'  = login_button var
+        # check if 'submit' is equal to login_button.attribute var
+        login_button = self.browser.find_element_by_tag_name("button")
+        self.assertEqual(
+            login_button.get_attribute('type'),
+            'button'
+        )
+
+        # Check Type Username Pass RIGHT !
+        # User input username
+        # User in put password
+        username_box.send_keys('tamtong007')
+        # time.sleep(2)
+        password_box.send_keys('O87525o135@')
+        # time.sleep(2)
+        login_buttonnew = self.browser.find_element_by_name('login_button_name')
+        # login_class = self.browser.find_element_by_xpath("//button[@type='submit']")
+        login_buttonnew.click()
+        # login_class.click()
+        # time.sleep(2)
+
+        broswer_title = self.browser.title
+        self.assertIn('Home', broswer_title)
+
+        # check if username shown is right
+        id_user = self.browser.find_element_by_tag_name('h4').text
+        self.assertIn('tamtong007', id_user)
+
+        subject_dropdown = self.browser.find_element_by_name('subjectTerm').text
+        self.assertIn('Term: 1\nTerm: 2\nTerm: 3\nTerm: 4\nTerm: 5\nTerm: 6\nTerm: 7\nTerm: 8', subject_dropdown)
+        # time.sleep(2)
+
+        # subject_dropdown.Select('Term: 1')
+        # time.sleep(2)
+
+        '''check table header from 1-4'''
+
+        table_element_1 = self.browser.find_element_by_xpath("//tr[@id='table']/th[1]").text
+        self.assertIn('No.', table_element_1)
+
+        table_element_2 = self.browser.find_element_by_xpath("//tr[@id='table']/th[2]").text
+        self.assertIn('Subject', table_element_2)
+
+        table_element_3 = self.browser.find_element_by_xpath("//tr[@id='table']/th[3]").text
+        self.assertIn('Unit', table_element_3)
+
+        table_element_4 = self.browser.find_element_by_xpath("//tr[@id='table']/th[4]").text
+        self.assertIn('Grade', table_element_4)
+
+        '''
+        Check  of subject (1-9)
+        -1 table number
+        -2 subject input box
+        -3 unit value
+        -4 grade value
+        -
+         '''
+        for i in range(1, 10, 1):
+            subject_table_num = self.browser.find_element_by_id("table_number_" + str(i)).text
+            table_num = self.browser.find_element_by_id("table_number_" + str(i)).text
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name').text
+            self.assertIn(str(i), subject_table_num)
+            self.assertIn(str(i), table_num)
+            self.assertIn('', subject_input_box)
+            for j in range(1, 10, 1):
+                if (j <= 5):
+                    subject_unit = self.browser.find_element_by_xpath(
+                        '//select[@id=' + "'subject" + str(i) + "Unitid']/option[" + str(j) + ']').text
+
+                subject_grade = self.browser.find_element_by_xpath(
+                    '//select[@id=' + "'subject" + str(i) + "Gradeid']/option[" + str(j) + ']').text
+
+                if (j == 1):
+                    self.assertIn('', subject_unit)
+                    self.assertIn('', subject_grade)
+                if (j == 2):
+                    self.assertIn('Unit: 1', subject_unit)
+                    self.assertIn('  Grade: 4  (A)', subject_grade)
+                if (j == 3):
+                    self.assertIn('Unit: 2', subject_unit)
+                    self.assertIn('Grade: 3.5 (B+)', subject_grade)
+                if (j == 4):
+                    self.assertIn('Unit: 3', subject_unit)
+                    self.assertIn(' Grade: 3  (B)', subject_grade)
+                if (j == 5):
+                    self.assertIn('Unit: 4', subject_unit)
+                    self.assertIn('Grade: 2.5  (C+)', subject_grade)
+                if (j == 6):
+                    self.assertIn(' Grade: 2  (C)', subject_grade)
+                if (j == 7):
+                    self.assertIn('Grade: 1.5  (D+)', subject_grade)
+                if (j == 8):
+                    self.assertIn('  Grade: 1  (D)', subject_grade)
+                if (j == 9):
+                    self.assertIn('Grade: 0  (F)', subject_grade)
+
+                # Check submit and save button
+                submit_button = self.browser.find_element_by_id('submit_button').text
+                save_button = self.browser.find_element_by_id('save_button').text
+                self.assertIn('Submit', submit_button)
+                self.assertIn('', save_button)
+                # Check your gpa and student status element
+                your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+                student_status_text = self.browser.find_element_by_name('student_status_text').text
+                self.assertIn('Your GPA :', your_gpa_text)
+                self.assertIn('Student Status :', student_status_text)
+
+        # create list subject first contain 9 index
+        list_subject_term1 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term2 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term3 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term4 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term5 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term6 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term7 = ['', '', '', '', '', '', '', '', '', '']
+        list_subject_term8 = ['', '', '', '', '', '', '', '', '', '']
+
+        for i in range(0, 10, 1):
+            # create input each term subject
+            list_subject_term1[i] = 'term1_subject' + str(i)
+            list_subject_term2[i] = 'term2_subject' + str(i)
+            list_subject_term3[i] = 'term3_subject' + str(i)
+            list_subject_term4[i] = 'term4_subject' + str(i)
+            list_subject_term5[i] = 'term5_subject' + str(i)
+            list_subject_term6[i] = 'term6_subject' + str(i)
+            list_subject_term7[i] = 'term7_subject' + str(i)
+            list_subject_term8[i] = 'term8_subject' + str(i)
+
+        '''term 1 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('1')
+        for i in range (1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term1[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject'+str(i)+'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject'+str(i)+'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 2 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('2')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term2[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 3 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('3')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term3[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 4 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('4')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term4[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 5 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('5')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term5[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 6 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('6')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term6[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 7 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('7')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term7[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+        '''term 8 user input'''
+        # Check submit and save button
+        submit_button = self.browser.find_element_by_id('submit_button').text
+        save_button = self.browser.find_element_by_id('save_button').text
+        self.assertIn('Submit', submit_button)
+        self.assertIn('', save_button)
+
+        # get element submit and save button for clicking
+        submit_click = self.browser.find_element_by_id('submit_button')
+        save_click = self.browser.find_element_by_id('save_button')
+
+        # Check your gpa and student status element
+        your_gpa_text = self.browser.find_element_by_name('your_gpa_text').text
+        student_status_text = self.browser.find_element_by_name('student_status_text').text
+        self.assertIn('Your GPA :', your_gpa_text)
+        self.assertIn('Student Status :', student_status_text)
+
+        # user click dropdown to select term
+        select_term = Select(self.browser.find_element_by_id('subjectTermid'))
+        select_term.select_by_value('8')
+        for i in range(1, 10, 1):
+            # user input
+            # input subject name
+            subject_input_box = self.browser.find_element_by_name('subject' + str(i) + 'name')
+
+            subject_input_box.send_keys(list_subject_term8[i])
+
+            print(subject_input_box.text)
+            # input subject unit
+            unit_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Unitid')
+            unit_dropdown.send_keys('Unit: 3')
+            # input subject grade
+            grade_dropdown = self.browser.find_element_by_id('subject' + str(i) + 'Gradeid')
+            grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
+            time.sleep(2)
+        # user click submit button
+        submit_click.click()
+        # user click save button
+        save_click.click()
+        time.sleep(2)
+
+
+
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
