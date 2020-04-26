@@ -1257,6 +1257,18 @@ class NewVisitorTest(unittest.TestCase):
             self.assertIn('2.5', td[i].text)
             print(str(i) + ' td of grade rignt now =' + td[i].text)
 
+    def test_can_check_graph_output(self):
+        self.browser.get("http://127.0.0.1:8000/r'graph'")
+        self.assertIn('Graph', self.browser.title)
+        # check user_gpax is shown
+        user_gpax = self.browser.find_element_by_tag_name('h3').text
+        self.assertIn('Your GPAX : 2.50', user_gpax)
+        # check graph element
+        graph_element = self.browser.find_element_by_name('Graph_script')
+        self.assertEqual(
+            graph_element.get_attribute('type'),
+            'text/javascript'
+        )
     def test_can_check_flow_page_element(self):
         # เธอคลิกเข้ามาที่ link flow
         self.browser.get('http://localhost:8000/flow.html')
@@ -1486,6 +1498,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Normal State', submit_text)
         # finish test
         # self.fail('Finish the test!')
+
 
     def test_home(self):
         # เมื่อเขากดเข้าไปที่หน้า signup
