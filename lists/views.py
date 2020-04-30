@@ -55,8 +55,8 @@ def signup(request):
 
 # this is login page
 def calGrade(request):
-    term1 = Term1()
-    term2 = Term2()
+    #term1 = Term1()
+    #term2 = Term2()
     # warning text if user doesn't input info correctly
     not_input = "Plese check your infromation before saving."
     # checkinput by addding all unit and grade
@@ -164,7 +164,7 @@ def calGrade(request):
                 GPA.objects.filter(pk=1).update(GPA_1=res)
 
                 data = Term1.objects.all()
-                term1.GPA = res
+                Term1.GPA = res
                 return render(request, 'home.html', {'result': res})
         # check if request is correct term
         if request.POST.get('subjectTerm') == "2":
@@ -257,7 +257,7 @@ def calGrade(request):
 
                 GPA.objects.filter(pk=1).update(GPA_2=res)
 
-                term2.GPA = res
+                Term2.GPA = res
                 return render(request, 'home.html', {'result': res})
 
         if request.POST.get('subjectTerm') == "3":
