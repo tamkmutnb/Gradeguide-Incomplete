@@ -409,31 +409,31 @@ def calGrade(request):
             return render(request, 'home.html', {'result': res})
         # else update one for each subject containing (subjectname, unit, grade and GPA)
         else:
-            Term.objects.filter(pk=27).update(subject=request.POST['subject1name'],
+            Term.objects.filter(pk=28).update(subject=request.POST['subject1name'],
                                               unit=request.POST['subject1Unit'],
                                               Grade=request.POST['subject1Grade'], GPA=res)
-            Term.objects.filter(pk=28).update(subject=request.POST['subject2name'],
+            Term.objects.filter(pk=29).update(subject=request.POST['subject2name'],
                                               unit=request.POST['subject2Unit'],
                                               Grade=request.POST['subject2Grade'], GPA=res)
-            Term.objects.filter(pk=29).update(subject=request.POST['subject3name'],
+            Term.objects.filter(pk=30).update(subject=request.POST['subject3name'],
                                               unit=request.POST['subject3Unit'],
                                               Grade=request.POST['subject3Grade'], GPA=res)
-            Term.objects.filter(pk=30).update(subject=request.POST['subject4name'],
+            Term.objects.filter(pk=31).update(subject=request.POST['subject4name'],
                                               unit=request.POST['subject4Unit'],
                                               Grade=request.POST['subject4Grade'], GPA=res)
-            Term.objects.filter(pk=31).update(subject=request.POST['subject5name'],
+            Term.objects.filter(pk=32).update(subject=request.POST['subject5name'],
                                               unit=request.POST['subject5Unit'],
                                               Grade=request.POST['subject5Grade'], GPA=res)
-            Term.objects.filter(pk=32).update(subject=request.POST['subject6name'],
+            Term.objects.filter(pk=33).update(subject=request.POST['subject6name'],
                                               unit=request.POST['subject6Unit'],
                                               Grade=request.POST['subject6Grade'], GPA=res)
-            Term.objects.filter(pk=33).update(subject=request.POST['subject7name'],
+            Term.objects.filter(pk=34).update(subject=request.POST['subject7name'],
                                               unit=request.POST['subject7Unit'],
                                               Grade=request.POST['subject7Grade'], GPA=res)
-            Term.objects.filter(pk=34).update(subject=request.POST['subject8name'],
+            Term.objects.filter(pk=35).update(subject=request.POST['subject8name'],
                                               unit=request.POST['subject8Unit'],
                                               Grade=request.POST['subject8Grade'], GPA=res)
-            Term.objects.filter(pk=35).update(subject=request.POST['subject9name'],
+            Term.objects.filter(pk=36).update(subject=request.POST['subject9name'],
                                               unit=request.POST['subject9Unit'],
                                               Grade=request.POST['subject9Grade'], GPA=res)
             GPA.objects.filter(pk=1).update(GPA_4=res)
@@ -500,31 +500,31 @@ def calGrade(request):
             return render(request, 'home.html', {'result': res})
         # else update one for each subject containing (subjectname, unit, grade and GPA)
         else:
-            Term.objects.filter(pk=36).update(subject=request.POST['subject1name'],
+            Term.objects.filter(pk=37).update(subject=request.POST['subject1name'],
                                               unit=request.POST['subject1Unit'],
                                               Grade=request.POST['subject1Grade'], GPA=res)
-            Term.objects.filter(pk=37).update(subject=request.POST['subject2name'],
+            Term.objects.filter(pk=38).update(subject=request.POST['subject2name'],
                                               unit=request.POST['subject2Unit'],
                                               Grade=request.POST['subject2Grade'], GPA=res)
-            Term.objects.filter(pk=38).update(subject=request.POST['subject3name'],
+            Term.objects.filter(pk=39).update(subject=request.POST['subject3name'],
                                               unit=request.POST['subject3Unit'],
                                               Grade=request.POST['subject3Grade'], GPA=res)
-            Term.objects.filter(pk=39).update(subject=request.POST['subject4name'],
+            Term.objects.filter(pk=40).update(subject=request.POST['subject4name'],
                                               unit=request.POST['subject4Unit'],
                                               Grade=request.POST['subject4Grade'], GPA=res)
-            Term.objects.filter(pk=40).update(subject=request.POST['subject5name'],
+            Term.objects.filter(pk=41).update(subject=request.POST['subject5name'],
                                               unit=request.POST['subject5Unit'],
                                               Grade=request.POST['subject5Grade'], GPA=res)
-            Term.objects.filter(pk=41).update(subject=request.POST['subject6name'],
+            Term.objects.filter(pk=42).update(subject=request.POST['subject6name'],
                                               unit=request.POST['subject6Unit'],
                                               Grade=request.POST['subject6Grade'], GPA=res)
-            Term.objects.filter(pk=42).update(subject=request.POST['subject7name'],
+            Term.objects.filter(pk=43).update(subject=request.POST['subject7name'],
                                               unit=request.POST['subject7Unit'],
                                               Grade=request.POST['subject7Grade'], GPA=res)
-            Term.objects.filter(pk=43).update(subject=request.POST['subject8name'],
+            Term.objects.filter(pk=44).update(subject=request.POST['subject8name'],
                                               unit=request.POST['subject8Unit'],
                                               Grade=request.POST['subject8Grade'], GPA=res)
-            Term.objects.filter(pk=44).update(subject=request.POST['subject9name'],
+            Term.objects.filter(pk=45).update(subject=request.POST['subject9name'],
                                               unit=request.POST['subject9Unit'],
                                               Grade=request.POST['subject9Grade'], GPA=res)
             GPA.objects.filter(pk=1).update(GPA_5=res)
@@ -773,13 +773,13 @@ def calGrade(request):
             return render(request, 'home.html', {'result': res})
         # else update one for each subject containing (subjectname, unit, grade and GPA)
         else:
-            Term.objects.filter(pk=1).update(subject=request.POST['subject1name'],
+            Term.objects.filter(pk=64).update(subject=request.POST['subject1name'],
                                              unit=request.POST['subject1Unit'],
                                              Grade=request.POST['subject1Grade'], GPA=res)
-            Term.objects.filter(pk=64).update(subject=request.POST['subject2name'],
+            Term.objects.filter(pk=65).update(subject=request.POST['subject2name'],
                                               unit=request.POST['subject2Unit'],
                                               Grade=request.POST['subject2Grade'], GPA=res)
-            Term.objects.filter(pk=65).update(subject=request.POST['subject3name'],
+            Term.objects.filter(pk=66).update(subject=request.POST['subject3name'],
                                               unit=request.POST['subject3Unit'],
                                               Grade=request.POST['subject3Grade'], GPA=res)
             Term.objects.filter(pk=67).update(subject=request.POST['subject4name'],

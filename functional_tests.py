@@ -639,7 +639,7 @@ class NewVisitorTest(unittest.TestCase):
             # input subject grade
             grade_dropdown = self.browser.find_element_by_id('subject'+str(i)+'Gradeid')
             grade_dropdown.send_keys('Grade: 2.5&nbsp; (C+)')
-            time.sleep(2)
+            #time.sleep(2)
         # user click submit button
         submit_click.click()
         # user click save button
