@@ -144,7 +144,24 @@ def calGrade(request):
     Term.objects.filter(pk=pk_list9[pk_index]).update(subject=request.POST['subject9name'],
                                      unit=request.POST['subject9Unit'],
                                      Grade=request.POST['subject9Grade'], GPA=res)
-    GPA.objects.filter(pk=1).update(GPA_1=res)
+    if pk_index == 1:
+        GPA.objects.filter(pk=1).update(GPA_1=res)
+    if pk_index == 2:
+        GPA.objects.filter(pk=1).update(GPA_2=res)
+    if pk_index == 3:
+        GPA.objects.filter(pk=1).update(GPA_3=res)
+    if pk_index == 4:
+        GPA.objects.filter(pk=1).update(GPA_4=res)
+    if pk_index == 5:
+        GPA.objects.filter(pk=1).update(GPA_5=res)
+    if pk_index == 6:
+        GPA.objects.filter(pk=1).update(GPA_6=res)
+    if pk_index == 7:
+        GPA.objects.filter(pk=1).update(GPA_7=res)
+    if pk_index == 8:
+        GPA.objects.filter(pk=1).update(GPA_8=res)
+
+    # return GPA value to home.html
     return render(request, 'home.html', {'result': res})
 
 
