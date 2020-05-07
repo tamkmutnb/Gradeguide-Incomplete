@@ -101,8 +101,9 @@ def calGrade(request):
     # creat object from term1 to term8
     for i in range(1, 73, 1):
         for j in range(1, 10, 1):
-            Term.objects.create(subject=request.POST['subject'+str(j)+'name'], unit=request.POST['subject'+str(j)+'Unit'],
-                                Grade=request.POST['subject'+str(j)+'Grade'], GPA=res)
+            Term.objects.create(subject=request.POST['subject' + str(j) + 'name'],
+                                unit=request.POST['subject' + str(j) + 'Unit'],
+                                Grade=request.POST['subject' + str(j) + 'Grade'], GPA=res)
 
     # create list for indexing pk
     pk_list1 = ['', 1, 10, 19, 28, 37, 46, 55, 64]
@@ -114,51 +115,62 @@ def calGrade(request):
     pk_list7 = ['', 7, 16, 25, 34, 43, 52, 61, 70]
     pk_list8 = ['', 8, 17, 26, 35, 44, 53, 62, 71]
     pk_list9 = ['', 9, 18, 27, 36, 45, 54, 63, 72]
+    pk_list_all = [[], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+                   [0, 19, 20, 21, 22, 23, 24, 25, 26, 27], [0, 28, 29, 30, 31, 32, 33, 34, 35, 36],
+                   [0, 37, 38, 39, 40, 41, 42, 43, 44, 45], [0, 46, 47, 48, 49, 50, 51, 52, 53, 54],
+                   [0, 55, 56, 57, 58, 59, 60, 61, 62, 63], [0, 64, 65, 66, 67, 68, 69, 70, 71, 72]]
 
-    pk_index = int(request.POST.get('subjectTerm'))
+    present_term_selected = int(request.POST.get('subjectTerm'))
+    present_term_list = pk_list_all[present_term_selected]
 
+    for i in present_term_list:
+        if i != 0:
+            Term.objects.filter(pk=i).update(subject=request.POST['subject'+str(present_term_list.index(i))+'name'], unit=request.POST['subject'+str(present_term_list.index(i))+'Unit'],
+                                             Grade=request.POST['subject'+str(present_term_list.index(i))+'Grade'], GPA=res)
+    '''
     Term.objects.filter(pk=pk_list1[pk_index]).update(subject=request.POST['subject1name'],
-                                     unit=request.POST['subject1Unit'],
-                                     Grade=request.POST['subject1Grade'], GPA=res)
+                                                      unit=request.POST['subject1Unit'],
+                                                      Grade=request.POST['subject1Grade'], GPA=res)
     Term.objects.filter(pk=pk_list2[pk_index]).update(subject=request.POST['subject2name'],
-                                     unit=request.POST['subject2Unit'],
-                                     Grade=request.POST['subject2Grade'], GPA=res)
+                                                      unit=request.POST['subject2Unit'],
+                                                      Grade=request.POST['subject2Grade'], GPA=res)
     Term.objects.filter(pk=pk_list3[pk_index]).update(subject=request.POST['subject3name'],
-                                     unit=request.POST['subject3Unit'],
-                                     Grade=request.POST['subject3Grade'], GPA=res)
+                                                      unit=request.POST['subject3Unit'],
+                                                      Grade=request.POST['subject3Grade'], GPA=res)
     Term.objects.filter(pk=pk_list4[pk_index]).update(subject=request.POST['subject4name'],
-                                     unit=request.POST['subject4Unit'],
-                                     Grade=request.POST['subject4Grade'], GPA=res)
+                                                      unit=request.POST['subject4Unit'],
+                                                      Grade=request.POST['subject4Grade'], GPA=res)
     Term.objects.filter(pk=pk_list5[pk_index]).update(subject=request.POST['subject5name'],
-                                     unit=request.POST['subject5Unit'],
-                                     Grade=request.POST['subject5Grade'], GPA=res)
+                                                      unit=request.POST['subject5Unit'],
+                                                      Grade=request.POST['subject5Grade'], GPA=res)
     Term.objects.filter(pk=pk_list6[pk_index]).update(subject=request.POST['subject6name'],
-                                     unit=request.POST['subject6Unit'],
-                                     Grade=request.POST['subject6Grade'], GPA=res)
+                                                      unit=request.POST['subject6Unit'],
+                                                      Grade=request.POST['subject6Grade'], GPA=res)
     Term.objects.filter(pk=pk_list7[pk_index]).update(subject=request.POST['subject7name'],
-                                     unit=request.POST['subject7Unit'],
-                                     Grade=request.POST['subject7Grade'], GPA=res)
+                                                      unit=request.POST['subject7Unit'],
+                                                      Grade=request.POST['subject7Grade'], GPA=res)
     Term.objects.filter(pk=pk_list8[pk_index]).update(subject=request.POST['subject8name'],
-                                     unit=request.POST['subject8Unit'],
-                                     Grade=request.POST['subject8Grade'], GPA=res)
+                                                      unit=request.POST['subject8Unit'],
+                                                      Grade=request.POST['subject8Grade'], GPA=res)
     Term.objects.filter(pk=pk_list9[pk_index]).update(subject=request.POST['subject9name'],
-                                     unit=request.POST['subject9Unit'],
-                                     Grade=request.POST['subject9Grade'], GPA=res)
-    if pk_index == 1:
+                                                      unit=request.POST['subject9Unit'],
+                                                      Grade=request.POST['subject9Grade'], GPA=res)
+    '''
+    if present_term_selected == 1:
         GPA.objects.filter(pk=1).update(GPA_1=res)
-    if pk_index == 2:
+    if present_term_selected == 2:
         GPA.objects.filter(pk=1).update(GPA_2=res)
-    if pk_index == 3:
+    if present_term_selected == 3:
         GPA.objects.filter(pk=1).update(GPA_3=res)
-    if pk_index == 4:
+    if present_term_selected == 4:
         GPA.objects.filter(pk=1).update(GPA_4=res)
-    if pk_index == 5:
+    if present_term_selected == 5:
         GPA.objects.filter(pk=1).update(GPA_5=res)
-    if pk_index == 6:
+    if present_term_selected == 6:
         GPA.objects.filter(pk=1).update(GPA_6=res)
-    if pk_index == 7:
+    if present_term_selected == 7:
         GPA.objects.filter(pk=1).update(GPA_7=res)
-    if pk_index == 8:
+    if present_term_selected == 8:
         GPA.objects.filter(pk=1).update(GPA_8=res)
 
     # return GPA value to home.html
